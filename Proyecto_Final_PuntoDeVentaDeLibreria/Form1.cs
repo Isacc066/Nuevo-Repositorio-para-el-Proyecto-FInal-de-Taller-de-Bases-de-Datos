@@ -1,3 +1,5 @@
+using Proyecto_Final_PuntoDeVentaDeLibreria.DAO;
+
 namespace Proyecto_Final_PuntoDeVentaDeLibreria
 {
     public partial class Form1 : Form

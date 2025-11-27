@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 using MySql.Data.MySqlClient;
 
-namespace Proyecto_Final_PuntoDeVentaDeLibreria
+namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
 {
     internal class Conexion
     {
