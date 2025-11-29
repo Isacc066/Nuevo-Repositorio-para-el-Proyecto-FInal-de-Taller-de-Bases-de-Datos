@@ -3,9 +3,9 @@ using Proyecto_Final_PuntoDeVentaDeLibreria.DAO;
 
 namespace Proyecto_Final_PuntoDeVentaDeLibreria
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
         }
@@ -60,6 +60,13 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
                 this.Hide();
             }
 
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            // Puedes dejarlo vacío si no necesitas manejar el evento ahora
+            // o poner validaciones mínimas como:
+            // btnIngresar.Enabled = !string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContrasena.Text);
         }
 
         private void label1_Click(object sender, EventArgs e)

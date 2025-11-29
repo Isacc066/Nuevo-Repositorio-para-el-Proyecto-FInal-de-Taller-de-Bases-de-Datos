@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Final_PuntoDeVentaDeLibreria
 {
-    partial class Form1
+    partial class FormLogin
     {
         /// <summary>
         ///  Required designer variable.
@@ -62,6 +62,7 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(125, 27);
             txtUsuario.TabIndex = 2;
+            txtUsuario.TextChanged += this.txtUsuario_TextChanged;
             // 
             // txtContrasena
             // 
@@ -89,7 +90,7 @@
             label2.TabIndex = 5;
             label2.Text = "Contraseña";
             // 
-            // Form1
+            // FormLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -100,7 +101,7 @@
             Controls.Add(txtUsuario);
             Controls.Add(label1);
             Controls.Add(button1);
-            Name = "Form1";
+            Name = "FormLogin";
             Text = "Form1";
             ResumeLayout(false);
             PerformLayout();

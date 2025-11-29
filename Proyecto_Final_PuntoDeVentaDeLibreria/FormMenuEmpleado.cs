@@ -16,5 +16,22 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
         {
             InitializeComponent();
         }
+
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReportes_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            FormLogin login = new FormLogin();
+            login.Show();
+            this.Close();
+        }
     }
 }
