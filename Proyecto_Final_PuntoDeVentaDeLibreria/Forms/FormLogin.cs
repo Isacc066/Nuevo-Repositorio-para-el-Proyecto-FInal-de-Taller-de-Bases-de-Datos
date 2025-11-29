@@ -3,9 +3,9 @@ using Proyecto_Final_PuntoDeVentaDeLibreria.Models;
 
 namespace Proyecto_Final_PuntoDeVentaDeLibreria
 {
-    public partial class Form1 : Form
+    public partial class FormLogin : Form
     {
-        public Form1()
+        public FormLogin()
         {
             InitializeComponent();
         }

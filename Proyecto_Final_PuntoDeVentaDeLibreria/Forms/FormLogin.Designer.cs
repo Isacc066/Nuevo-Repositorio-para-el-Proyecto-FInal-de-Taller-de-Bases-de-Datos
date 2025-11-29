@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Final_PuntoDeVentaDeLibreria
 {
-    partial class Form1
+    partial class FormLogin
     {
         /// <summary>
         ///  Required designer variable.
