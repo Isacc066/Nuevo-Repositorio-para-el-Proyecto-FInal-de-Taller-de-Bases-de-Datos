@@ -10,6 +10,13 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
 {
     internal class Conexion
     {
+        private readonly string cadena = "Server=localhost;Database=VENTAS;Uid=root;Pwd=Tacodeguayaba16;";
+
+        public MySqlConnection GetConnection()
+        {
+            return new MySqlConnection(cadena);
+        }
+
         private MySqlConnection conn;
 
         public Conexion()
