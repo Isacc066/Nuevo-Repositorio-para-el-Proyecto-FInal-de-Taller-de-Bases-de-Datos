@@ -1,5 +1,5 @@
-using Proyecto_Final_PuntoDeVentaDeLibreria.Dao;
 using Proyecto_Final_PuntoDeVentaDeLibreria.DAO;
+using Proyecto_Final_PuntoDeVentaDeLibreria.Models;
 
 namespace Proyecto_Final_PuntoDeVentaDeLibreria
 {
