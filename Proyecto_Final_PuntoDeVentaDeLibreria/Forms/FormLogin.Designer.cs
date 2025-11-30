@@ -62,12 +62,13 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(125, 27);
             txtUsuario.TabIndex = 2;
-            txtUsuario.TextChanged += this.txtUsuario_TextChanged;
+            txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // txtContrasena
             // 
             txtContrasena.Location = new Point(185, 307);
             txtContrasena.Name = "txtContrasena";
+            txtContrasena.PasswordChar = '*';
             txtContrasena.Size = new Size(125, 27);
             txtContrasena.TabIndex = 3;
             // 

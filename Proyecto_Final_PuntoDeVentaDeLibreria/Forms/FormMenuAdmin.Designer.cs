@@ -34,6 +34,7 @@
             btnAuditoria = new Button();
             btnReportes = new Button();
             btnCerrarSesion = new Button();
+            btnEmpleados = new Button();
             SuspendLayout();
             // 
             // btnUsuarios
@@ -48,7 +49,7 @@
             // 
             // btnProductos
             // 
-            btnProductos.Location = new Point(337, 97);
+            btnProductos.Location = new Point(337, 111);
             btnProductos.Name = "btnProductos";
             btnProductos.Size = new Size(94, 29);
             btnProductos.TabIndex = 1;
@@ -96,11 +97,22 @@
             btnCerrarSesion.UseVisualStyleBackColor = true;
             btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
+            // btnEmpleados
+            // 
+            btnEmpleados.Location = new Point(337, 65);
+            btnEmpleados.Name = "btnEmpleados";
+            btnEmpleados.Size = new Size(94, 29);
+            btnEmpleados.TabIndex = 6;
+            btnEmpleados.Text = "Empleados";
+            btnEmpleados.UseVisualStyleBackColor = true;
+            btnEmpleados.Click += btnEmpleados_Click;
+            // 
             // FormMenuAdmin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(btnEmpleados);
             Controls.Add(btnCerrarSesion);
             Controls.Add(btnReportes);
             Controls.Add(btnAuditoria);
@@ -120,5 +132,6 @@
         private Button btnAuditoria;
         private Button btnReportes;
         private Button btnCerrarSesion;
+        private Button btnEmpleados;
     }
 }

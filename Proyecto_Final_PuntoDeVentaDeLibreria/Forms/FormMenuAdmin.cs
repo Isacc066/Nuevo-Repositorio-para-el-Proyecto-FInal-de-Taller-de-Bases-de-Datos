@@ -48,5 +48,10 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
             login.Show();
             this.Close();
         }
+
+        private void btnEmpleados_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
