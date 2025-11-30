@@ -126,10 +126,10 @@
             // dgvEmpleados
             // 
             dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEmpleados.Location = new Point(406, 212);
+            dgvEmpleados.Location = new Point(179, 132);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.RowHeadersWidth = 51;
-            dgvEmpleados.Size = new Size(300, 188);
+            dgvEmpleados.Size = new Size(600, 265);
             dgvEmpleados.TabIndex = 9;
             // 
             // label1
