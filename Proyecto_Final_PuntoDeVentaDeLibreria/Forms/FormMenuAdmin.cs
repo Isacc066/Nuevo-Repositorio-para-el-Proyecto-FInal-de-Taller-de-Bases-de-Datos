@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Final_PuntoDeVentaDeLibreria.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,7 +52,8 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void btnEmpleados_Click(object sender, EventArgs e)
         {
-
+            FrmCrudEmpleados frm = new FrmCrudEmpleados();
+            frm.ShowDialog();
         }
     }
 }
