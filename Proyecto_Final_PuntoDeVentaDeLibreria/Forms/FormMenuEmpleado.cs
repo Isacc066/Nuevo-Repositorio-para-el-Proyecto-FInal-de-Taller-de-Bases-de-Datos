@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Proyecto_Final_PuntoDeVentaDeLibreria.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,12 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
             FormLogin login = new FormLogin();
             login.Show();
             this.Close();
+        }
+
+        private void btnProductos_Click(object sender, EventArgs e)
+        {
+            FrmInventarioEmpleado frm = new FrmInventarioEmpleado();
+            frm.ShowDialog();
         }
     }
 }
