@@ -25,7 +25,8 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void btnProductos_Click(object sender, EventArgs e)
         {
-
+            FrmCrudProductos frm = new FrmCrudProductos();
+            frm.Show();
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
