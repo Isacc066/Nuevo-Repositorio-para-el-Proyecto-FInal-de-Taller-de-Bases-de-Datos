@@ -18,33 +18,38 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
             conexion = new Conexion();
         }
 
-        public string Login(string usuario, string contrasena)
+        public Usuario? Login(string usuario, string contrasenaHash)
         {
-            string hash = Seguridad.HashSHA256(contrasena);
-
-            string query = "SELECT rol FROM usuarios WHERE usuario = @user AND contrasena = @pass LIMIT 1";
+            Usuario? u = null;
 
             try
             {
-                using (MySqlConnection conn = conexion.GetConnection())
+                var conn = conexion.Abrir();
+                using var cmd = new MySqlCommand(
+                    "SELECT * FROM usuarios WHERE usuario=@u AND contrasena=@c", conn);
+
+                cmd.Parameters.AddWithValue("@u", usuario);
+                cmd.Parameters.AddWithValue("@c", contrasenaHash);
+
+                using var reader = cmd.ExecuteReader();
+
+                if (reader.Read())
                 {
-                    conn.Open();
-                    MySqlCommand cmd = new MySqlCommand(query, conn);
-                    cmd.Parameters.AddWithValue("@user", usuario);
-                    cmd.Parameters.AddWithValue("@pass", hash);
-
-                    var rol = cmd.ExecuteScalar();
-
-                    if (rol != null)
-                        return rol.ToString();   // admin o empleado
-                    else
-                        return null;             // NO existe
+                    u = new Usuario
+                    {
+                        IdUsuario = reader.GetInt32("idUsuario"),
+                        NombreUsuario = reader.GetString("usuario"),
+                        Contrasena = reader.GetString("contrasena"),
+                        Rol = reader.GetString("rol")
+                    };
                 }
             }
-            catch
+            finally
             {
-                return null;
+                conexion.Cerrar();
             }
+
+            return u;
         }
     }
 }

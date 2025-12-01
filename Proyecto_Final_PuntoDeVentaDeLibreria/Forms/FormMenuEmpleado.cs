@@ -13,14 +13,17 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 {
     public partial class FormMenuEmpleado : Form
     {
-        public FormMenuEmpleado()
+        private int idUsuarioEnSesion;
+        public FormMenuEmpleado(int idUsuario)
         {
             InitializeComponent();
+            idUsuarioEnSesion = idUsuario;
         }
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-
+            FrmVentas frm = new FrmVentas(idUsuarioEnSesion);
+            frm.ShowDialog();
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
@@ -39,6 +42,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
         {
             FrmInventarioEmpleado frm = new FrmInventarioEmpleado();
             frm.ShowDialog();
+        }
+
+        private void FormMenuEmpleado_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

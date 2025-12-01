@@ -13,17 +13,22 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                Conexion c = new Conexion();
-                c.Abrir();
-                MessageBox.Show("Conexión exitosa");
-                c.Cerrar();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            // Evento eliminado, requerido por el diseñador
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            // Evento eliminado, requerido por el diseñador
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+            // Evento eliminado, requerido por el diseñador
+        }
+
+        private void FormLogin_Load(object sender, EventArgs e)
+        {
+            // Método requerido por el diseñador
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
@@ -33,46 +38,40 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
             string usuario = txtUsuario.Text.Trim();
             string contrasena = txtContrasena.Text.Trim();
 
-            if (usuario == "" || contrasena == "")
+            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contrasena))
             {
                 MessageBox.Show("Debe ingresar usuario y contraseña.");
                 return;
             }
 
-            string rol = dao.Login(usuario, contrasena);
+            // Convertir a hash la contraseña antes de comparar
+            string contrasenaHash = Seguridad.HashSHA256(contrasena);
 
-            if (rol == null)
+            // Ahora dao.Login devuelve un Usuario completo O null
+            Usuario? u = dao.Login(usuario, contrasenaHash);
+
+            if (u == null)
             {
                 MessageBox.Show("Usuario o contraseña incorrectos.");
+                return;
+            }
+
+            // Mensaje opcional
+            MessageBox.Show("Bienvenido, " + u.NombreUsuario);
+
+            // Abrir menú según el rol
+            if (u.Rol == "admin")
+            {
+                FormMenuAdmin menu = new FormMenuAdmin(u.IdUsuario);
+                menu.Show();
             }
             else
             {
-                MessageBox.Show("Bienvenido: " + rol);
-
-                if (rol == "admin")
-                {
-                    new FormMenuAdmin().Show();
-                }
-                else
-                {
-                    new FormMenuEmpleado().Show();
-                }
-
-                this.Hide();
+                FormMenuEmpleado menu = new FormMenuEmpleado(u.IdUsuario);
+                menu.Show();
             }
 
-        }
-
-        private void txtUsuario_TextChanged(object sender, EventArgs e)
-        {
-            // Puedes dejarlo vacío si no necesitas manejar el evento ahora
-            // o poner validaciones mínimas como:
-            // btnIngresar.Enabled = !string.IsNullOrWhiteSpace(txtUsuario.Text) && !string.IsNullOrWhiteSpace(txtContrasena.Text);
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
+            this.Hide();
         }
     }
 }

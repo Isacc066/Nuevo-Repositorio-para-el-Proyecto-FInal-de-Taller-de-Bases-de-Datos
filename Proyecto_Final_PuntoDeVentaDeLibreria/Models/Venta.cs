@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
 {
-    internal class Usuario
+    internal class Venta
     {
+        public int IdVenta { get; set; }
+        public DateTime Fecha { get; set; }
         public int IdUsuario { get; set; }
-        public string NombreUsuario { get; set; } = "";
-        public string Contrasena { get; set; } = "";
-        public string Rol { get; set; } = "";
+        public decimal Total { get; set; }
     }
 }

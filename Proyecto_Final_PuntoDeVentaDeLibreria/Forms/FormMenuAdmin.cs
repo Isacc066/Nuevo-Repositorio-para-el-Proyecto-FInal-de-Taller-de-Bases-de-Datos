@@ -13,9 +13,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 {
     public partial class FormMenuAdmin : Form
     {
-        public FormMenuAdmin()
+        private int idUsuarioEnSesion;
+        public FormMenuAdmin(int idUsuario)
         {
             InitializeComponent();
+            idUsuarioEnSesion = idUsuario;
         }
 
         private void btnUsuarios_Click(object sender, EventArgs e)
@@ -31,7 +33,8 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-
+            FrmVentas frm = new FrmVentas(idUsuarioEnSesion);
+            frm.ShowDialog();
         }
 
         private void btnAuditoria_Click(object sender, EventArgs e)
@@ -55,6 +58,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
         {
             FrmCrudEmpleados frm = new FrmCrudEmpleados();
             frm.ShowDialog();
+        }
+
+        private void FormMenuAdmin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -85,6 +85,7 @@
             Controls.Add(btnVentas);
             Name = "FormMenuEmpleado";
             Text = "FormMenuEmpleado";
+            Load += FormMenuEmpleado_Load;
             ResumeLayout(false);
         }
 

@@ -121,6 +121,7 @@
             Controls.Add(btnUsuarios);
             Name = "FormMenuAdmin";
             Text = "FormMenuAdmin";
+            Load += FormMenuAdmin_Load;
             ResumeLayout(false);
         }
 
