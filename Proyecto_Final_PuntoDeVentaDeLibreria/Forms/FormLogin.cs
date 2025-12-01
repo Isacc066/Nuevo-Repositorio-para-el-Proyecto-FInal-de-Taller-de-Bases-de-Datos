@@ -13,6 +13,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //IT'S HERE
             // Evento eliminado, requerido por el diseñador
             try
             {
