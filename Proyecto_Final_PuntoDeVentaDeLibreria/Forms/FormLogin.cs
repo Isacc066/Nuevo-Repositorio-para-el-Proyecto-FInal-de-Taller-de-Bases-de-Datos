@@ -14,6 +14,17 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
         private void button1_Click(object sender, EventArgs e)
         {
             // Evento eliminado, requerido por el diseñador
+            try
+            {
+                Conexion c = new Conexion();
+                c.Abrir();
+                MessageBox.Show("Conexión exitosa");
+                c.Cerrar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
