@@ -39,7 +39,8 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void btnAuditoria_Click(object sender, EventArgs e)
         {
-
+            FrmAuditoria frmAuditoria = new FrmAuditoria();
+            frmAuditoria.ShowDialog();
         }
 
         private void btnReportes_Click(object sender, EventArgs e)
