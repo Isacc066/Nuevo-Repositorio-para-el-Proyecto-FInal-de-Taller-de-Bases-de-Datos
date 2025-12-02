@@ -28,7 +28,8 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-
+            FrmReportes frmReportes = new FrmReportes();
+            frmReportes.ShowDialog();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
