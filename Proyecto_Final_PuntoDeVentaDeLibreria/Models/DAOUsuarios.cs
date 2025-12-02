@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using Proyecto_Final_PuntoDeVentaDeLibreria.Dao;
 using Proyecto_Final_PuntoDeVentaDeLibreria.DAO;
+using Proyecto_Final_PuntoDeVentaDeLibreria.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,14 +26,13 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
             try
             {
                 var conn = conexion.Abrir();
-                using var cmd = new MySqlCommand(
-                    "SELECT * FROM usuarios WHERE usuario=@u AND contrasena=@c", conn);
+                string query = "SELECT * FROM usuarios WHERE usuario=@u AND contrasena=@c";
 
+                using var cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@u", usuario);
                 cmd.Parameters.AddWithValue("@c", contrasenaHash);
 
                 using var reader = cmd.ExecuteReader();
-
                 if (reader.Read())
                 {
                     u = new Usuario
@@ -50,6 +50,107 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
             }
 
             return u;
+        }
+
+        // ============================================
+        //               LISTAR USUARIOS
+        // ============================================
+        public List<Usuario> Listar()
+        {
+            List<Usuario> lista = new();
+
+            try
+            {
+                var conn = conexion.Abrir();
+                using var cmd = new MySqlCommand("spListarUsuarios", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                using var reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    lista.Add(new Usuario
+                    {
+                        IdUsuario = reader.GetInt32("idUsuario"),
+                        NombreUsuario = reader.GetString("usuario"),
+                        Rol = reader.GetString("rol"),
+                        Contrasena = "" // no mostramos contraseñas
+                    });
+                }
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+
+            return lista;
+        }
+
+        // ============================================
+        //               INSERTAR
+        // ============================================
+        public bool Insertar(Usuario u)
+        {
+            try
+            {
+                var conn = conexion.Abrir();
+                using var cmd = new MySqlCommand("spInsertarUsuario", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@pUsuario", u.NombreUsuario);
+                cmd.Parameters.AddWithValue("@pContrasena", u.Contrasena);
+                cmd.Parameters.AddWithValue("@pRol", u.Rol);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+
+        // ============================================
+        //               ACTUALIZAR
+        // ============================================
+        public bool Actualizar(Usuario u)
+        {
+            try
+            {
+                var conn = conexion.Abrir();
+                using var cmd = new MySqlCommand("spActualizarUsuario", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@pId", u.IdUsuario);
+                cmd.Parameters.AddWithValue("@pUsuario", u.NombreUsuario);
+                cmd.Parameters.AddWithValue("@pContrasena", u.Contrasena);
+                cmd.Parameters.AddWithValue("@pRol", u.Rol);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+        }
+
+        // ============================================
+        //               ELIMINAR
+        // ============================================
+        public bool Eliminar(int id)
+        {
+            try
+            {
+                var conn = conexion.Abrir();
+                using var cmd = new MySqlCommand("spEliminarUsuario", conn);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@pId", id);
+
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
         }
     }
 }

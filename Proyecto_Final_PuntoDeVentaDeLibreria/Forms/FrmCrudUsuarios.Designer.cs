@@ -1,0 +1,172 @@
+﻿namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
+{
+    partial class FrmCrudUsuarios
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            dgvUsuarios = new DataGridView();
+            txtUsuario = new TextBox();
+            txtContrasena = new TextBox();
+            cboRol = new ComboBox();
+            btnAgregar = new Button();
+            btnActualizar = new Button();
+            btnEliminar = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            txtIdUsuario = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvUsuarios
+            // 
+            dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvUsuarios.Location = new Point(482, 60);
+            dgvUsuarios.Name = "dgvUsuarios";
+            dgvUsuarios.RowHeadersWidth = 51;
+            dgvUsuarios.Size = new Size(798, 467);
+            dgvUsuarios.TabIndex = 0;
+            dgvUsuarios.CellContentClick += dgvUsuarios_CellClick;
+            // 
+            // txtUsuario
+            // 
+            txtUsuario.Location = new Point(12, 70);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(125, 27);
+            txtUsuario.TabIndex = 1;
+            // 
+            // txtContrasena
+            // 
+            txtContrasena.Location = new Point(12, 159);
+            txtContrasena.Name = "txtContrasena";
+            txtContrasena.PasswordChar = '*';
+            txtContrasena.Size = new Size(125, 27);
+            txtContrasena.TabIndex = 2;
+            // 
+            // cboRol
+            // 
+            cboRol.FormattingEnabled = true;
+            cboRol.Location = new Point(1, 231);
+            cboRol.Name = "cboRol";
+            cboRol.Size = new Size(151, 28);
+            cboRol.TabIndex = 3;
+            // 
+            // btnAgregar
+            // 
+            btnAgregar.Location = new Point(30, 359);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.TabIndex = 4;
+            btnAgregar.Text = "Agregar";
+            btnAgregar.UseVisualStyleBackColor = true;
+            btnAgregar.Click += btnAgregar_Click;
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.Location = new Point(149, 359);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(94, 29);
+            btnActualizar.TabIndex = 5;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.Click += btnActualizar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(305, 359);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.TabIndex = 6;
+            btnEliminar.Text = "Elliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.Info;
+            label1.Location = new Point(41, 37);
+            label1.Name = "label1";
+            label1.Size = new Size(59, 20);
+            label1.TabIndex = 7;
+            label1.Text = "Usuario";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.Info;
+            label2.Location = new Point(30, 119);
+            label2.Name = "label2";
+            label2.Size = new Size(83, 20);
+            label2.TabIndex = 8;
+            label2.Text = "Contraseña";
+            // 
+            // txtIdUsuario
+            // 
+            txtIdUsuario.Enabled = false;
+            txtIdUsuario.Location = new Point(236, 70);
+            txtIdUsuario.Name = "txtIdUsuario";
+            txtIdUsuario.PasswordChar = '*';
+            txtIdUsuario.ReadOnly = true;
+            txtIdUsuario.Size = new Size(125, 27);
+            txtIdUsuario.TabIndex = 9;
+            // 
+            // FrmCrudUsuarios
+            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1301, 539);
+            Controls.Add(txtIdUsuario);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnActualizar);
+            Controls.Add(btnAgregar);
+            Controls.Add(cboRol);
+            Controls.Add(txtContrasena);
+            Controls.Add(txtUsuario);
+            Controls.Add(dgvUsuarios);
+            Name = "FrmCrudUsuarios";
+            Text = "FrmCrudUsuarios";
+            ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+
+        #endregion
+
+        private DataGridView dgvUsuarios;
+        private TextBox txtUsuario;
+        private TextBox txtContrasena;
+        private ComboBox cboRol;
+        private Button btnAgregar;
+        private Button btnActualizar;
+        private Button btnEliminar;
+        private Label label1;
+        private Label label2;
+        private TextBox txtIdUsuario;
+    }
+}

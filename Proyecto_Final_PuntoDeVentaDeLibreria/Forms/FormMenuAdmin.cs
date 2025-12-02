@@ -22,7 +22,12 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
+            this.Hide();  // ocultar menú mientras trabajas
 
+            FrmCrudUsuarios frm = new FrmCrudUsuarios();
+            frm.ShowDialog();   // abrir CRUD
+
+            this.Show();   // volver a mostrar el menú cuando cierren el CRUD
         }
 
         private void btnProductos_Click(object sender, EventArgs e)
