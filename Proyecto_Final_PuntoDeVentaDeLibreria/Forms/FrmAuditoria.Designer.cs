@@ -112,7 +112,7 @@
             // 
             // btnBuscarProducto
             // 
-            btnBuscarProducto.Location = new Point(211, 253);
+            btnBuscarProducto.Location = new Point(198, 253);
             btnBuscarProducto.Name = "btnBuscarProducto";
             btnBuscarProducto.Size = new Size(138, 29);
             btnBuscarProducto.TabIndex = 8;
@@ -122,7 +122,7 @@
             // 
             // btnMostrarTodos
             // 
-            btnMostrarTodos.Location = new Point(463, 243);
+            btnMostrarTodos.Location = new Point(441, 359);
             btnMostrarTodos.Name = "btnMostrarTodos";
             btnMostrarTodos.Size = new Size(118, 29);
             btnMostrarTodos.TabIndex = 9;
@@ -132,7 +132,7 @@
             // 
             // btnFiltrarAccion
             // 
-            btnFiltrarAccion.Location = new Point(463, 303);
+            btnFiltrarAccion.Location = new Point(441, 253);
             btnFiltrarAccion.Name = "btnFiltrarAccion";
             btnFiltrarAccion.Size = new Size(118, 29);
             btnFiltrarAccion.TabIndex = 10;
@@ -142,7 +142,7 @@
             // 
             // btnFiltrarFecha
             // 
-            btnFiltrarFecha.Location = new Point(463, 354);
+            btnFiltrarFecha.Location = new Point(441, 301);
             btnFiltrarFecha.Name = "btnFiltrarFecha";
             btnFiltrarFecha.Size = new Size(118, 29);
             btnFiltrarFecha.TabIndex = 11;
@@ -153,7 +153,7 @@
             // cboAccion
             // 
             cboAccion.FormattingEnabled = true;
-            cboAccion.Location = new Point(463, 161);
+            cboAccion.Location = new Point(430, 209);
             cboAccion.Name = "cboAccion";
             cboAccion.Size = new Size(151, 28);
             cboAccion.TabIndex = 12;
