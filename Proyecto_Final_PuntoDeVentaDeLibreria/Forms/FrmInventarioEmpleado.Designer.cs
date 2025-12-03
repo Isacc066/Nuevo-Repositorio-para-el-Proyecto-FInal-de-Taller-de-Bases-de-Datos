@@ -37,22 +37,23 @@
             dgvInventario.AllowUserToAddRows = false;
             dgvInventario.AllowUserToDeleteRows = false;
             dgvInventario.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvInventario.Location = new Point(26, 12);
+            dgvInventario.Location = new Point(459, 37);
             dgvInventario.Name = "dgvInventario";
             dgvInventario.ReadOnly = true;
             dgvInventario.RowHeadersWidth = 51;
             dgvInventario.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvInventario.Size = new Size(762, 405);
+            dgvInventario.Size = new Size(672, 653);
             dgvInventario.TabIndex = 0;
             // 
             // FrmInventarioEmpleado
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1486, 725);
             Controls.Add(dgvInventario);
             Name = "FrmInventarioEmpleado";
-            Text = "FrmInventarioEmpleado";
+            Text = "Inventario De Empleado";
             Load += FrmInventarioEmpleado_Load;
             ((System.ComponentModel.ISupportInitialize)dgvInventario).EndInit();
             ResumeLayout(false);

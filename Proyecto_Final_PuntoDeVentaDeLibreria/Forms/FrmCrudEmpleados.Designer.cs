@@ -47,9 +47,9 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(32, 37);
+            btnAgregar.Location = new Point(32, 148);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.Size = new Size(119, 51);
             btnAgregar.TabIndex = 0;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -57,9 +57,9 @@
             // 
             // btnEditar
             // 
-            btnEditar.Location = new Point(32, 92);
+            btnEditar.Location = new Point(32, 263);
             btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(94, 29);
+            btnEditar.Size = new Size(119, 50);
             btnEditar.TabIndex = 1;
             btnEditar.Text = "Editar";
             btnEditar.UseVisualStyleBackColor = true;
@@ -67,9 +67,9 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(32, 152);
+            btnEliminar.Location = new Point(32, 511);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(119, 49);
             btnEliminar.TabIndex = 2;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -77,9 +77,9 @@
             // 
             // btnGuardar
             // 
-            btnGuardar.Location = new Point(32, 212);
+            btnGuardar.Location = new Point(32, 386);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 29);
+            btnGuardar.Size = new Size(119, 60);
             btnGuardar.TabIndex = 3;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -87,40 +87,40 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(32, 275);
+            btnCancelar.Location = new Point(32, 617);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(94, 29);
+            btnCancelar.Size = new Size(119, 59);
             btnCancelar.TabIndex = 4;
-            btnCancelar.Text = "Cancelar";
+            btnCancelar.Text = " Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(179, 38);
+            txtNombre.Location = new Point(293, 53);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(125, 27);
+            txtNombre.Size = new Size(146, 27);
             txtNombre.TabIndex = 5;
             // 
             // txtApellido
             // 
-            txtApellido.Location = new Point(340, 39);
+            txtApellido.Location = new Point(561, 53);
             txtApellido.Name = "txtApellido";
-            txtApellido.Size = new Size(125, 27);
+            txtApellido.Size = new Size(140, 27);
             txtApellido.TabIndex = 6;
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(502, 39);
+            txtTelefono.Location = new Point(806, 53);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(125, 27);
+            txtTelefono.Size = new Size(138, 27);
             txtTelefono.TabIndex = 7;
             // 
             // txtDireccion
             // 
-            txtDireccion.Location = new Point(654, 39);
+            txtDireccion.Location = new Point(1131, 53);
             txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(125, 27);
+            txtDireccion.Size = new Size(217, 27);
             txtDireccion.TabIndex = 8;
             // 
             // dgvEmpleados
@@ -129,13 +129,14 @@
             dgvEmpleados.Location = new Point(179, 132);
             dgvEmpleados.Name = "dgvEmpleados";
             dgvEmpleados.RowHeadersWidth = 51;
-            dgvEmpleados.Size = new Size(600, 265);
+            dgvEmpleados.Size = new Size(1269, 563);
             dgvEmpleados.TabIndex = 9;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(220, 12);
+            label1.BackColor = SystemColors.Info;
+            label1.Location = new Point(321, 12);
             label1.Name = "label1";
             label1.Size = new Size(64, 20);
             label1.TabIndex = 10;
@@ -144,7 +145,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(388, 9);
+            label2.BackColor = SystemColors.Info;
+            label2.Location = new Point(589, 12);
             label2.Name = "label2";
             label2.Size = new Size(66, 20);
             label2.TabIndex = 11;
@@ -153,7 +155,8 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(548, 8);
+            label3.BackColor = SystemColors.Info;
+            label3.Location = new Point(831, 12);
             label3.Name = "label3";
             label3.Size = new Size(67, 20);
             label3.TabIndex = 12;
@@ -162,7 +165,8 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(680, 12);
+            label4.BackColor = SystemColors.Info;
+            label4.Location = new Point(1162, 12);
             label4.Name = "label4";
             label4.Size = new Size(72, 20);
             label4.TabIndex = 13;
@@ -172,7 +176,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.InactiveCaption;
+            ClientSize = new Size(1460, 718);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
@@ -188,7 +193,7 @@
             Controls.Add(btnEditar);
             Controls.Add(btnAgregar);
             Name = "FrmCrudEmpleados";
-            Text = "FrmCrudEmpleados";
+            Text = "CRUD De Empleados";
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
             ResumeLayout(false);
             PerformLayout();

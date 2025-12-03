@@ -73,7 +73,7 @@
             // 
             // txtBuscarVenta
             // 
-            txtBuscarVenta.Location = new Point(16, 177);
+            txtBuscarVenta.Location = new Point(16, 208);
             txtBuscarVenta.Name = "txtBuscarVenta";
             txtBuscarVenta.Size = new Size(125, 27);
             txtBuscarVenta.TabIndex = 1;
@@ -111,6 +111,7 @@
             // lblResumen
             // 
             lblResumen.AutoSize = true;
+            lblResumen.BackColor = SystemColors.Info;
             lblResumen.Location = new Point(23, 374);
             lblResumen.Name = "lblResumen";
             lblResumen.Size = new Size(164, 20);
@@ -150,7 +151,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.BackColor = SystemColors.Info;
+            label4.BackColor = SystemColors.GradientActiveCaption;
             label4.Location = new Point(23, 342);
             label4.Name = "label4";
             label4.Size = new Size(69, 20);
@@ -161,7 +162,7 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = SystemColors.Info;
-            label5.Location = new Point(16, 139);
+            label5.Location = new Point(16, 176);
             label5.Name = "label5";
             label5.Size = new Size(93, 20);
             label5.TabIndex = 10;
@@ -183,7 +184,7 @@
             // 
             // dtpFechaConsulta
             // 
-            dtpFechaConsulta.Location = new Point(16, 83);
+            dtpFechaConsulta.Location = new Point(16, 68);
             dtpFechaConsulta.Name = "dtpFechaConsulta";
             dtpFechaConsulta.Size = new Size(287, 27);
             dtpFechaConsulta.TabIndex = 13;
@@ -263,9 +264,9 @@
             // 
             // btnReporteCompleto
             // 
-            btnReporteCompleto.Location = new Point(229, 218);
+            btnReporteCompleto.Location = new Point(342, 225);
             btnReporteCompleto.Name = "btnReporteCompleto";
-            btnReporteCompleto.Size = new Size(174, 50);
+            btnReporteCompleto.Size = new Size(174, 57);
             btnReporteCompleto.TabIndex = 18;
             btnReporteCompleto.Text = "Reporte Completo";
             btnReporteCompleto.UseVisualStyleBackColor = true;
@@ -273,7 +274,7 @@
             // 
             // btnFiltrarPorFecha
             // 
-            btnFiltrarPorFecha.Location = new Point(19, 218);
+            btnFiltrarPorFecha.Location = new Point(18, 225);
             btnFiltrarPorFecha.Name = "btnFiltrarPorFecha";
             btnFiltrarPorFecha.Size = new Size(187, 57);
             btnFiltrarPorFecha.TabIndex = 17;
@@ -299,7 +300,7 @@
             // 
             // btnBuscarVenta
             // 
-            btnBuscarVenta.Location = new Point(20, 223);
+            btnBuscarVenta.Location = new Point(16, 241);
             btnBuscarVenta.Name = "btnBuscarVenta";
             btnBuscarVenta.Size = new Size(138, 45);
             btnBuscarVenta.TabIndex = 18;
@@ -309,7 +310,7 @@
             // 
             // btnConsultarFecha
             // 
-            btnConsultarFecha.Location = new Point(205, 223);
+            btnConsultarFecha.Location = new Point(16, 106);
             btnConsultarFecha.Name = "btnConsultarFecha";
             btnConsultarFecha.Size = new Size(121, 45);
             btnConsultarFecha.TabIndex = 17;
@@ -321,7 +322,7 @@
             // 
             panelBotones.Controls.Add(btnCerrar);
             panelBotones.Dock = DockStyle.Bottom;
-            panelBotones.Location = new Point(0, 561);
+            panelBotones.Location = new Point(0, 596);
             panelBotones.Name = "panelBotones";
             panelBotones.Size = new Size(1698, 125);
             panelBotones.TabIndex = 20;
@@ -340,7 +341,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1698, 686);
+            BackColor = SystemColors.Menu;
+            ClientSize = new Size(1698, 721);
             Controls.Add(panelBotones);
             Controls.Add(gbConsultas);
             Controls.Add(gbFiltros);
@@ -349,7 +351,7 @@
             Controls.Add(lblResumen);
             Controls.Add(dgvReporte);
             Name = "FrmReportes";
-            Text = "FrmReportes";
+            Text = "Reportes De Ventas";
             ((System.ComponentModel.ISupportInitialize)dgvReporte).EndInit();
             gbEstadisticas.ResumeLayout(false);
             gbEstadisticas.PerformLayout();

@@ -45,7 +45,7 @@
             // dgvUsuarios
             // 
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsuarios.Location = new Point(482, 60);
+            dgvUsuarios.Location = new Point(693, 47);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersWidth = 51;
             dgvUsuarios.Size = new Size(409, 467);
@@ -54,32 +54,32 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(41, 70);
+            txtUsuario.Location = new Point(212, 70);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(125, 27);
+            txtUsuario.Size = new Size(158, 27);
             txtUsuario.TabIndex = 1;
             // 
             // txtContrasena
             // 
-            txtContrasena.Location = new Point(41, 160);
+            txtContrasena.Location = new Point(212, 130);
             txtContrasena.Name = "txtContrasena";
             txtContrasena.PasswordChar = '*';
-            txtContrasena.Size = new Size(125, 27);
+            txtContrasena.Size = new Size(158, 27);
             txtContrasena.TabIndex = 2;
             // 
             // cboRol
             // 
             cboRol.FormattingEnabled = true;
-            cboRol.Location = new Point(30, 231);
+            cboRol.Location = new Point(219, 208);
             cboRol.Name = "cboRol";
             cboRol.Size = new Size(151, 28);
             cboRol.TabIndex = 3;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(58, 359);
+            btnAgregar.Location = new Point(219, 400);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.Size = new Size(160, 55);
             btnAgregar.TabIndex = 4;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -87,9 +87,9 @@
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(178, 359);
+            btnActualizar.Location = new Point(219, 488);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(94, 29);
+            btnActualizar.Size = new Size(160, 51);
             btnActualizar.TabIndex = 5;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = true;
@@ -97,9 +97,9 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(331, 359);
+            btnEliminar.Location = new Point(219, 592);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(160, 47);
             btnEliminar.TabIndex = 6;
             btnEliminar.Text = "Elliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -109,26 +109,27 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.Info;
-            label1.Location = new Point(78, 38);
+            label1.Location = new Point(81, 77);
             label1.Name = "label1";
-            label1.Size = new Size(59, 20);
+            label1.Size = new Size(62, 20);
             label1.TabIndex = 7;
-            label1.Text = "Usuario";
+            label1.Text = "Usuario:";
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.Info;
-            label2.Location = new Point(69, 119);
+            label2.Location = new Point(81, 137);
             label2.Name = "label2";
-            label2.Size = new Size(83, 20);
+            label2.Size = new Size(86, 20);
             label2.TabIndex = 8;
-            label2.Text = "Contraseña";
+            label2.Text = "Contraseña:";
             // 
             // txtIdUsuario
             // 
+            txtIdUsuario.BackColor = SystemColors.GradientInactiveCaption;
             txtIdUsuario.Enabled = false;
-            txtIdUsuario.Location = new Point(236, 70);
+            txtIdUsuario.Location = new Point(507, 70);
             txtIdUsuario.Name = "txtIdUsuario";
             txtIdUsuario.PasswordChar = '*';
             txtIdUsuario.ReadOnly = true;
@@ -137,9 +138,9 @@
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(236, 241);
+            btnListar.Location = new Point(219, 308);
             btnListar.Name = "btnListar";
-            btnListar.Size = new Size(114, 29);
+            btnListar.Size = new Size(160, 52);
             btnListar.TabIndex = 10;
             btnListar.Text = "Listar Usuarios";
             btnListar.UseVisualStyleBackColor = true;
@@ -149,7 +150,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1301, 539);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1456, 722);
             Controls.Add(btnListar);
             Controls.Add(txtIdUsuario);
             Controls.Add(label2);
@@ -162,7 +164,7 @@
             Controls.Add(txtUsuario);
             Controls.Add(dgvUsuarios);
             Name = "FrmCrudUsuarios";
-            Text = "FrmCrudUsuarios";
+            Text = "CRUD De Usuarios";
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);
             PerformLayout();

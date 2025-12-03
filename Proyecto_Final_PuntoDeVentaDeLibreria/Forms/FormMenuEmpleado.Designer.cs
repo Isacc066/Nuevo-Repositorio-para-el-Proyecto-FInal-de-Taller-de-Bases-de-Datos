@@ -36,9 +36,9 @@
             // 
             // btnVentas
             // 
-            btnVentas.Location = new Point(352, 43);
+            btnVentas.Location = new Point(606, 102);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(94, 29);
+            btnVentas.Size = new Size(332, 96);
             btnVentas.TabIndex = 0;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = true;
@@ -46,9 +46,9 @@
             // 
             // btnReportes
             // 
-            btnReportes.Location = new Point(352, 169);
+            btnReportes.Location = new Point(606, 364);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(94, 29);
+            btnReportes.Size = new Size(332, 101);
             btnReportes.TabIndex = 1;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
@@ -56,9 +56,9 @@
             // 
             // btnCerrarSesion
             // 
-            btnCerrarSesion.Location = new Point(336, 266);
+            btnCerrarSesion.Location = new Point(606, 526);
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(122, 29);
+            btnCerrarSesion.Size = new Size(332, 120);
             btnCerrarSesion.TabIndex = 2;
             btnCerrarSesion.Text = "Cerrar Sesión";
             btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -66,9 +66,9 @@
             // 
             // btnProductos
             // 
-            btnProductos.Location = new Point(352, 113);
+            btnProductos.Location = new Point(606, 226);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(94, 29);
+            btnProductos.Size = new Size(332, 108);
             btnProductos.TabIndex = 3;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = true;
@@ -78,13 +78,14 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.InactiveCaption;
+            ClientSize = new Size(1478, 733);
             Controls.Add(btnProductos);
             Controls.Add(btnCerrarSesion);
             Controls.Add(btnReportes);
             Controls.Add(btnVentas);
             Name = "FormMenuEmpleado";
-            Text = "FormMenuEmpleado";
+            Text = "Menú De Empleado";
             Load += FormMenuEmpleado_Load;
             ResumeLayout(false);
         }

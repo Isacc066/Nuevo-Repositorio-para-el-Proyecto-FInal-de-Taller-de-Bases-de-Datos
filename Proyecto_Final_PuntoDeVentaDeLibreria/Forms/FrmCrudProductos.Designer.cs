@@ -51,28 +51,28 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(402, 38);
+            txtNombre.Location = new Point(555, 38);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(125, 27);
             txtNombre.TabIndex = 0;
             // 
             // txtDescripcion
             // 
-            txtDescripcion.Location = new Point(562, 38);
+            txtDescripcion.Location = new Point(807, 38);
             txtDescripcion.Name = "txtDescripcion";
-            txtDescripcion.Size = new Size(125, 27);
+            txtDescripcion.Size = new Size(179, 27);
             txtDescripcion.TabIndex = 1;
             // 
             // txtPrecio
             // 
-            txtPrecio.Location = new Point(724, 38);
+            txtPrecio.Location = new Point(1117, 38);
             txtPrecio.Name = "txtPrecio";
             txtPrecio.Size = new Size(125, 27);
             txtPrecio.TabIndex = 2;
             // 
             // txtStock
             // 
-            txtStock.Location = new Point(882, 38);
+            txtStock.Location = new Point(1321, 38);
             txtStock.Name = "txtStock";
             txtStock.Size = new Size(125, 27);
             txtStock.TabIndex = 3;
@@ -87,15 +87,15 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             dgvProductos.ReadOnly = true;
             dgvProductos.RowHeadersWidth = 51;
             dgvProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvProductos.Size = new Size(826, 319);
+            dgvProductos.Size = new Size(790, 596);
             dgvProductos.TabIndex = 4;
             dgvProductos.CellClick += dgvProductos_CellClick;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(38, 85);
+            btnAgregar.Location = new Point(38, 132);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.Size = new Size(114, 44);
             btnAgregar.TabIndex = 5;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -103,9 +103,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(38, 133);
+            btnActualizar.Location = new Point(38, 247);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(94, 29);
+            btnActualizar.Size = new Size(114, 48);
             btnActualizar.TabIndex = 6;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = true;
@@ -113,9 +113,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(38, 197);
+            btnEliminar.Location = new Point(38, 366);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 29);
+            btnEliminar.Size = new Size(114, 52);
             btnEliminar.TabIndex = 7;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
@@ -123,9 +123,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(38, 259);
+            btnListar.Location = new Point(38, 506);
             btnListar.Name = "btnListar";
-            btnListar.Size = new Size(94, 29);
+            btnListar.Size = new Size(114, 46);
             btnListar.TabIndex = 8;
             btnListar.Text = "Listar";
             btnListar.UseVisualStyleBackColor = true;
@@ -133,9 +133,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(38, 321);
+            btnCancelar.Location = new Point(38, 652);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(94, 29);
+            btnCancelar.Size = new Size(114, 47);
             btnCancelar.TabIndex = 9;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -143,7 +143,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             // txtIdProducto
             // 
-            txtIdProducto.BackColor = SystemColors.Window;
+            txtIdProducto.BackColor = SystemColors.GradientInactiveCaption;
             txtIdProducto.Enabled = false;
             txtIdProducto.Location = new Point(38, 38);
             txtIdProducto.Name = "txtIdProducto";
@@ -152,7 +152,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             // txtISBN
             // 
-            txtISBN.Location = new Point(244, 38);
+            txtISBN.Location = new Point(305, 38);
             txtISBN.Name = "txtISBN";
             txtISBN.Size = new Size(125, 27);
             txtISBN.TabIndex = 11;
@@ -162,7 +162,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.Info;
-            label1.Location = new Point(286, 9);
+            label1.Location = new Point(345, 9);
             label1.Name = "label1";
             label1.Size = new Size(41, 20);
             label1.TabIndex = 12;
@@ -172,7 +172,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.Info;
-            label2.Location = new Point(439, 9);
+            label2.Location = new Point(585, 9);
             label2.Name = "label2";
             label2.Size = new Size(64, 20);
             label2.TabIndex = 13;
@@ -182,7 +182,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Info;
-            label3.Location = new Point(583, 9);
+            label3.Location = new Point(807, 9);
             label3.Name = "label3";
             label3.Size = new Size(87, 20);
             label3.TabIndex = 14;
@@ -192,7 +192,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             label4.AutoSize = true;
             label4.BackColor = SystemColors.Info;
-            label4.Location = new Point(763, 9);
+            label4.Location = new Point(1151, 9);
             label4.Name = "label4";
             label4.Size = new Size(50, 20);
             label4.TabIndex = 15;
@@ -202,7 +202,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             label5.AutoSize = true;
             label5.BackColor = SystemColors.Info;
-            label5.Location = new Point(922, 15);
+            label5.Location = new Point(1363, 9);
             label5.Name = "label5";
             label5.Size = new Size(45, 20);
             label5.TabIndex = 16;
@@ -212,7 +212,8 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1051, 450);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1468, 721);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -231,7 +232,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             Controls.Add(txtDescripcion);
             Controls.Add(txtNombre);
             Name = "FrmCrudProductos";
-            Text = "FrmCrudProductos";
+            Text = "CRUD De Productos";
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);
             PerformLayout();

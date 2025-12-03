@@ -38,7 +38,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(498, 155);
+            button1.Location = new Point(666, 63);
             button1.Name = "button1";
             button1.Size = new Size(151, 29);
             button1.TabIndex = 0;
@@ -49,34 +49,35 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(222, 191);
+            label1.BackColor = SystemColors.Info;
+            label1.Location = new Point(574, 233);
             label1.Name = "label1";
-            label1.Size = new Size(59, 20);
+            label1.Size = new Size(62, 20);
             label1.TabIndex = 1;
-            label1.Text = "Usuario";
+            label1.Text = "Usuario:";
             label1.Click += label1_Click;
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(185, 214);
+            txtUsuario.Location = new Point(671, 233);
             txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(125, 27);
+            txtUsuario.Size = new Size(146, 27);
             txtUsuario.TabIndex = 2;
             txtUsuario.TextChanged += txtUsuario_TextChanged;
             // 
             // txtContrasena
             // 
-            txtContrasena.Location = new Point(185, 307);
+            txtContrasena.Location = new Point(671, 309);
             txtContrasena.Name = "txtContrasena";
             txtContrasena.PasswordChar = '*';
-            txtContrasena.Size = new Size(125, 27);
+            txtContrasena.Size = new Size(146, 27);
             txtContrasena.TabIndex = 3;
             // 
             // button2
             // 
-            button2.Location = new Point(199, 123);
+            button2.Location = new Point(620, 431);
             button2.Name = "button2";
-            button2.Size = new Size(94, 29);
+            button2.Size = new Size(228, 77);
             button2.TabIndex = 4;
             button2.Text = "Ingresar";
             button2.UseVisualStyleBackColor = true;
@@ -85,17 +86,19 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(210, 275);
+            label2.BackColor = SystemColors.Info;
+            label2.Location = new Point(568, 309);
             label2.Name = "label2";
-            label2.Size = new Size(83, 20);
+            label2.Size = new Size(86, 20);
             label2.TabIndex = 5;
-            label2.Text = "Contraseña";
+            label2.Text = "Contraseña:";
             // 
             // FormLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1432, 726);
             Controls.Add(label2);
             Controls.Add(button2);
             Controls.Add(txtContrasena);
@@ -103,7 +106,7 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Name = "FormLogin";
-            Text = "Form1";
+            Text = "Inicio de sesión";
             Load += FormLogin_Load;
             ResumeLayout(false);
             PerformLayout();

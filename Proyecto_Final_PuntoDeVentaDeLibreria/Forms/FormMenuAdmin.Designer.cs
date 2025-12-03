@@ -39,9 +39,9 @@
             // 
             // btnUsuarios
             // 
-            btnUsuarios.Location = new Point(337, 30);
+            btnUsuarios.Location = new Point(629, 50);
             btnUsuarios.Name = "btnUsuarios";
-            btnUsuarios.Size = new Size(94, 29);
+            btnUsuarios.Size = new Size(300, 70);
             btnUsuarios.TabIndex = 0;
             btnUsuarios.Text = "Usuarios";
             btnUsuarios.UseVisualStyleBackColor = true;
@@ -49,9 +49,9 @@
             // 
             // btnProductos
             // 
-            btnProductos.Location = new Point(337, 111);
+            btnProductos.Location = new Point(639, 254);
             btnProductos.Name = "btnProductos";
-            btnProductos.Size = new Size(94, 29);
+            btnProductos.Size = new Size(290, 64);
             btnProductos.TabIndex = 1;
             btnProductos.Text = "Productos";
             btnProductos.UseVisualStyleBackColor = true;
@@ -59,9 +59,9 @@
             // 
             // btnVentas
             // 
-            btnVentas.Location = new Point(337, 165);
+            btnVentas.Location = new Point(639, 355);
             btnVentas.Name = "btnVentas";
-            btnVentas.Size = new Size(94, 29);
+            btnVentas.Size = new Size(290, 65);
             btnVentas.TabIndex = 2;
             btnVentas.Text = "Ventas";
             btnVentas.UseVisualStyleBackColor = true;
@@ -69,9 +69,9 @@
             // 
             // btnAuditoria
             // 
-            btnAuditoria.Location = new Point(337, 227);
+            btnAuditoria.Location = new Point(639, 448);
             btnAuditoria.Name = "btnAuditoria";
-            btnAuditoria.Size = new Size(94, 29);
+            btnAuditoria.Size = new Size(290, 60);
             btnAuditoria.TabIndex = 3;
             btnAuditoria.Text = "Auditoría";
             btnAuditoria.UseVisualStyleBackColor = true;
@@ -79,9 +79,9 @@
             // 
             // btnReportes
             // 
-            btnReportes.Location = new Point(337, 291);
+            btnReportes.Location = new Point(639, 542);
             btnReportes.Name = "btnReportes";
-            btnReportes.Size = new Size(94, 29);
+            btnReportes.Size = new Size(290, 63);
             btnReportes.TabIndex = 4;
             btnReportes.Text = "Reportes";
             btnReportes.UseVisualStyleBackColor = true;
@@ -89,9 +89,9 @@
             // 
             // btnCerrarSesion
             // 
-            btnCerrarSesion.Location = new Point(337, 361);
+            btnCerrarSesion.Location = new Point(639, 640);
             btnCerrarSesion.Name = "btnCerrarSesion";
-            btnCerrarSesion.Size = new Size(110, 29);
+            btnCerrarSesion.Size = new Size(290, 66);
             btnCerrarSesion.TabIndex = 5;
             btnCerrarSesion.Text = "Cerrar Sesión";
             btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -99,9 +99,9 @@
             // 
             // btnEmpleados
             // 
-            btnEmpleados.Location = new Point(337, 65);
+            btnEmpleados.Location = new Point(639, 150);
             btnEmpleados.Name = "btnEmpleados";
-            btnEmpleados.Size = new Size(94, 29);
+            btnEmpleados.Size = new Size(290, 70);
             btnEmpleados.TabIndex = 6;
             btnEmpleados.Text = "Empleados";
             btnEmpleados.UseVisualStyleBackColor = true;
@@ -111,7 +111,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1445, 727);
             Controls.Add(btnEmpleados);
             Controls.Add(btnCerrarSesion);
             Controls.Add(btnReportes);
@@ -120,7 +121,7 @@
             Controls.Add(btnProductos);
             Controls.Add(btnUsuarios);
             Name = "FormMenuAdmin";
-            Text = "FormMenuAdmin";
+            Text = "Menú De Administrador";
             Load += FormMenuAdmin_Load;
             ResumeLayout(false);
         }

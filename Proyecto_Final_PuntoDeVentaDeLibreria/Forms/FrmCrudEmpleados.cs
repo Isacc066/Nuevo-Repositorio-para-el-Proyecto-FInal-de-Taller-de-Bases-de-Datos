@@ -64,6 +64,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
         public FrmCrudEmpleados()
         {
             InitializeComponent();
+            this.Load += FrmCrudEmpleados_Load; // ← ACTIVAMOS EL EVENTO LOAD
         }
 
         private void label1_Click(object sender, EventArgs e)

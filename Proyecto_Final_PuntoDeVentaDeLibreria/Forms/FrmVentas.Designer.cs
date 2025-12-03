@@ -43,14 +43,14 @@
             // 
             // txtISBN
             // 
-            txtISBN.Location = new Point(157, 82);
+            txtISBN.Location = new Point(193, 85);
             txtISBN.Name = "txtISBN";
-            txtISBN.Size = new Size(125, 27);
+            txtISBN.Size = new Size(142, 27);
             txtISBN.TabIndex = 0;
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(321, 82);
+            txtCantidad.Location = new Point(395, 85);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(125, 27);
             txtCantidad.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             btnAgregar.Location = new Point(28, 141);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(94, 29);
+            btnAgregar.Size = new Size(108, 44);
             btnAgregar.TabIndex = 2;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
@@ -71,7 +71,7 @@
             dgvCarrito.Location = new Point(157, 129);
             dgvCarrito.Name = "dgvCarrito";
             dgvCarrito.RowHeadersWidth = 51;
-            dgvCarrito.Size = new Size(615, 279);
+            dgvCarrito.Size = new Size(615, 584);
             dgvCarrito.TabIndex = 3;
             // 
             // label1
@@ -88,7 +88,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.Info;
-            label2.Location = new Point(355, 47);
+            label2.Location = new Point(395, 47);
             label2.Name = "label2";
             label2.Size = new Size(69, 20);
             label2.TabIndex = 5;
@@ -96,9 +96,9 @@
             // 
             // btnPagar
             // 
-            btnPagar.Location = new Point(28, 210);
+            btnPagar.Location = new Point(28, 245);
             btnPagar.Name = "btnPagar";
-            btnPagar.Size = new Size(94, 29);
+            btnPagar.Size = new Size(108, 45);
             btnPagar.TabIndex = 6;
             btnPagar.Text = "Pagar";
             btnPagar.UseVisualStyleBackColor = true;
@@ -106,9 +106,9 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(28, 283);
+            btnCancelar.Location = new Point(28, 432);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(94, 29);
+            btnCancelar.Size = new Size(108, 52);
             btnCancelar.TabIndex = 7;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
@@ -117,7 +117,8 @@
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.Location = new Point(592, 85);
+            lblTotal.BackColor = SystemColors.ButtonFace;
+            lblTotal.Location = new Point(650, 85);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(42, 20);
             lblTotal.TabIndex = 8;
@@ -127,7 +128,7 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Info;
-            label3.Location = new Point(592, 47);
+            label3.Location = new Point(650, 47);
             label3.Name = "label3";
             label3.Size = new Size(42, 20);
             label3.TabIndex = 9;
@@ -137,7 +138,8 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = SystemColors.GradientInactiveCaption;
+            ClientSize = new Size(1489, 725);
             Controls.Add(label3);
             Controls.Add(lblTotal);
             Controls.Add(btnCancelar);
@@ -149,7 +151,7 @@
             Controls.Add(txtCantidad);
             Controls.Add(txtISBN);
             Name = "FrmVentas";
-            Text = "FrmVentas";
+            Text = "Ventas";
             Load += FrmVentas_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).EndInit();
             ResumeLayout(false);
