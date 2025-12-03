@@ -50,7 +50,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
         }
 
         /// <summary>
-        /// Obtiene el total de productos vendidos (histórico)
+        /// Obtiene el total de productos vendidos
         /// Usa la función fnTotalProductosVendidos
         /// </summary>
         public int ObtenerTotalProductosVendidos()

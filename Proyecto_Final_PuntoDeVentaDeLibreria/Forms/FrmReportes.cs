@@ -63,7 +63,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
         {
             try
             {
-                // Total de productos vendidos (histórico)
+                // Total de productos vendidos
                 int totalProductos = reporteDAO.ObtenerTotalProductosVendidos();
                 lblTotalProductosVendidos.Text = $"Total productos vendidos: {totalProductos:N0}";
 

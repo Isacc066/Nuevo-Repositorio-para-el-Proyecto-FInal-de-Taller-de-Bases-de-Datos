@@ -10,16 +10,17 @@ using System.Threading.Tasks;
 namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
 {
     /// <summary>
-    /// Clase de acceso a datos para Empleados usando Stored Procedures
+    /// CLASE DE ACCESO A DATOS PARA EMPLEADOS USANDO PROCEDIMIENTOS ALMACENADOS
     /// </summary>
 
     internal class EmpleadoDAO
     {
         /// <summary>
-        /// Inserta un nuevo empleado usando stored procedure
+        /// INSERTA UN NUEVO EMPLEADO USANDO STORED PROCEDURE
         /// </summary>
-        /// <param name="empleado">Objeto empleado con los datos</param>
-        /// <returns>True si se insertó correctamente</returns>
+        /// <param name="empleado"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool Insertar(Empleado empleado)
         {
             Conexion conexion = new Conexion();
@@ -33,7 +34,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
                 cmd.Parameters.AddWithValue("pNombre", empleado.Nombre);
                 cmd.Parameters.AddWithValue("pApellido", empleado.Apellido);
                 cmd.Parameters.AddWithValue("pTelefono", empleado.Telefono);
-                cmd.Parameters.AddWithValue("pDireccion", empleado.Direccion); // ← NUEVA LÍNEA
+                cmd.Parameters.AddWithValue("pDireccion", empleado.Direccion);
 
                 int filasAfectadas = cmd.ExecuteNonQuery();
                 return filasAfectadas > 0;
@@ -49,10 +50,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
         }
 
         /// <summary>
-        /// Actualiza un empleado existente usando stored procedure
+        /// ACTUALIZA UN EMPLEADO EXISTENTE USANDO STORED PROCEUDRE
         /// </summary>
-        /// <param name="empleado">Objeto empleado con los datos actualizados</param>
-        /// <returns>True si se actualizó correctamente</returns>
+        /// <param name="empleado"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool Actualizar(Empleado empleado)
         {
             Conexion conexion = new Conexion();
@@ -67,7 +69,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
                 cmd.Parameters.AddWithValue("pNombre", empleado.Nombre);
                 cmd.Parameters.AddWithValue("pApellido", empleado.Apellido);
                 cmd.Parameters.AddWithValue("pTelefono", empleado.Telefono);
-                cmd.Parameters.AddWithValue("pDireccion", empleado.Direccion); // ← NUEVA LÍNEA
+                cmd.Parameters.AddWithValue("pDireccion", empleado.Direccion);
 
                 int filasAfectadas = cmd.ExecuteNonQuery();
                 return filasAfectadas > 0;
@@ -83,10 +85,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
         }
 
         /// <summary>
-        /// Elimina un empleado usando stored procedure
+        /// ELIMINA UN NEMPLEADO USANDO STORED PROCEDURE
         /// </summary>
-        /// <param name="idEmpleado">ID del empleado a eliminar</param>
-        /// <returns>True si se eliminó correctamente</returns>
+        /// <param name="idEmpleado"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public bool Eliminar(int idEmpleado)
         {
             Conexion conexion = new Conexion();
@@ -112,9 +115,10 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
         }
 
         /// <summary>
-        /// Lista todos los empleados usando stored procedure
+        /// LISTA TODOS LOS EMPLEADOS USANDO STORED PROCEDURE
         /// </summary>
-        /// <returns>Lista de empleados</returns>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public List<Empleado> ListarTodos()
         {
             List<Empleado> empleados = new List<Empleado>();
@@ -158,10 +162,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
         }
 
         /// <summary>
-        /// Busca un empleado por ID
+        /// BUSCA UN EMPLEADO POR ID
         /// </summary>
-        /// <param name="idEmpleado">ID del empleado</param>
-        /// <returns>Objeto Empleado o null si no existe</returns>
+        /// <param name="idEmpleado"></param>
+        /// <returns></returns>
+        /// <exception cref="Exception"></exception>
         public Empleado ObtenerPorId(int idEmpleado)
         {
             Empleado empleado = null;

@@ -31,7 +31,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // Deshabilitar id
             txtIdProducto.Enabled = false;
 
-            // Conectar Load si no lo hiciste en el diseñador
+            // Conectar Load
             this.Load += FrmCrudProductos_Load;
         }
 
@@ -222,6 +222,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             return true;
         }
 
+        /// <summary>
+        /// USO DEL LECTOR DE CÓDIGO DE BARRAS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void txtISBN_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -234,7 +239,6 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
                     return;
                 }
 
-                // Opcional: mover el cursor al siguiente campo
                 txtNombre.Focus();
 
                 // Evitar sonido "beep" del Enter

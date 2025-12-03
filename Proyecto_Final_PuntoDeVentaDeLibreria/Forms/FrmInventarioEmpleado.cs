@@ -33,7 +33,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             dgvInventario.DataSource = null;
             dgvInventario.DataSource = lista;
 
-            // Etiquetas más bonitas
+            // Etiquetas
             dgvInventario.Columns["IdProducto"].HeaderText = "ID";
             dgvInventario.Columns["ISBN"].HeaderText = "ISBN";
             dgvInventario.Columns["Nombre"].HeaderText = "Nombre";

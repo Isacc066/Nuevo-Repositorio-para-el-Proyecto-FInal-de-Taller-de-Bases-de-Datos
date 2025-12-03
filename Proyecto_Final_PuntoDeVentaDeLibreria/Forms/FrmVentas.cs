@@ -16,7 +16,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
     {
         private readonly VentaDAO ventaDAO;
         private List<DetalleVenta> carrito;
-        private int idUsuarioEnSesion; // pásalo desde el login cuando abras el form
+        private int idUsuarioEnSesion;
         public FrmVentas(int idUsuario)
         {
             InitializeComponent();

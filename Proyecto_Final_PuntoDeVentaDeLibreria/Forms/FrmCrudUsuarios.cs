@@ -28,9 +28,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             ConfigurarDataGrid();
         }
 
-        // ==========================================
-        // CONFIGURACIÓN INICIAL
-        // ==========================================
+        /// <summary>
+        /// CONFIGURACIÓN INICIAL
+        /// </summary>
         private void ConfigurarComboRol()
         {
             cboRol.Items.Clear();
@@ -76,9 +76,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             });
         }
 
-        // ==========================================
-        // CARGAR USUARIOS EN EL DGV
-        // ==========================================
+        /// <summary>
+        /// CARGAR USUARIOS EN EL DGV
+        /// </summary>
         private void ListarUsuarios()
         {
             dgvUsuarios.DataSource = null;
@@ -91,9 +91,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             ListarUsuarios();
         }
 
-        // ==========================================
-        // BOTÓN AGREGAR
-        // ==========================================
+        /// <summary>
+        /// BOTÓN AGREGAR USUARIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
@@ -118,9 +120,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             }
         }
 
-        // ==========================================
-        // BOTÓN ACTUALIZAR
-        // ==========================================
+        /// <summary>
+        /// BOTÓN ACTUALIZAR USUARIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtIdUsuario.Text))
@@ -145,9 +149,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             }
         }
 
-        // ==========================================
-        // BOTÓN ELIMINAR
-        // ==========================================
+        /// <summary>
+        /// BOTÓN ELIMINAR USUARIO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtIdUsuario.Text))
@@ -170,9 +176,6 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             }
         }
 
-        // ==========================================
-        // CUANDO SE HACE CLIC EN UNA FILA DEL GRID
-        // ==========================================
         private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
@@ -184,9 +187,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             txtContrasena.Text = ""; // Nunca se muestra
         }
 
-        // ==========================================
-        // LIMPIAR CAMPOS
-        // ==========================================
+        /// <summary>
+        /// LIMPIAR CAMPOS
+        /// </summary>
         private void Limpiar()
         {
             txtIdUsuario.Clear();

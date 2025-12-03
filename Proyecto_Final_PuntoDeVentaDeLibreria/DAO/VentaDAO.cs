@@ -35,7 +35,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
                 decimal total = 0m;
                 foreach (var d in detalles) total += d.PrecioUnitario * d.Cantidad;
 
-                // 2) Insertar venta (usando SP)
+                // 2) Insertar venta
                 using (var cmdVenta = new MySqlCommand("spRegistrarVenta", conn, trans))
                 {
                     cmdVenta.CommandType = System.Data.CommandType.StoredProcedure;
@@ -82,7 +82,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
             catch (Exception)
             {
                 try { trans.Rollback(); } catch { }
-                throw; // que la capa superior maneje el mensaje (o puedes retornar 0)
+                throw;
             }
             finally
             {
@@ -91,7 +91,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
         }
 
         /// <summary>
-        /// Busca datos del producto por isbn (o por id si quieres).
+        /// Busca datos del producto por isbn o por id
         /// Devuelve null si no existe.
         /// </summary>
         public Producto? ObtenerProductoPorISBN(string isbn)

@@ -22,7 +22,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            this.Hide();  // ocultar menú mientras trabajas
+            this.Hide();  // ocultar menú
 
             FrmCrudUsuarios frm = new FrmCrudUsuarios();
             frm.ShowDialog();   // abrir CRUD

@@ -52,9 +52,10 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
             return u;
         }
 
-        // ============================================
-        //               LISTAR USUARIOS
-        // ============================================
+        /// <summary>
+        /// LISTAR USUARIOS
+        /// </summary>
+        /// <returns></returns>
         public List<Usuario> Listar()
         {
             List<Usuario> lista = new();
@@ -85,9 +86,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
             return lista;
         }
 
-        // ============================================
-        //               INSERTAR
-        // ============================================
+        /// <summary>
+        /// INSERTAR USUARIO
+        /// </summary>
+        /// <param name="u"></param>
+        /// <returns></returns>
         public bool Insertar(Usuario u)
         {
             try
@@ -108,9 +111,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
             }
         }
 
-        // ============================================
-        //               ACTUALIZAR
-        // ============================================
+        /// <summary>
+        /// ACTUALIZAR USUARIO
+        /// </summary>
+        /// <param name="u"></param>
+        /// <returns></returns>
         public bool Actualizar(Usuario u)
         {
             try
@@ -132,9 +137,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
             }
         }
 
-        // ============================================
-        //               ELIMINAR
-        // ============================================
+        /// <summary>
+        /// ELIMINAR USUARIO
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public bool Eliminar(int id)
         {
             try

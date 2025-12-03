@@ -103,7 +103,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             dgvAuditoria.DataSource = null;
             dgvAuditoria.DataSource = listaActual;
 
-            // Personalizar columnas
+            // Personaliza columnas
             if (dgvAuditoria.Columns.Contains("IdAuditoria"))
             {
                 dgvAuditoria.Columns["IdAuditoria"].HeaderText = "ID";
@@ -137,7 +137,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             if (dgvAuditoria.Columns.Contains("ValoresNuevos"))
                 dgvAuditoria.Columns["ValoresNuevos"].HeaderText = "Valores Nuevos";
 
-            // Colorear filas según la acción
+            // Colorea filas según la acción
             foreach (DataGridViewRow row in dgvAuditoria.Rows)
             {
                 var auditoria = (AuditoriaProducto)row.DataBoundItem;

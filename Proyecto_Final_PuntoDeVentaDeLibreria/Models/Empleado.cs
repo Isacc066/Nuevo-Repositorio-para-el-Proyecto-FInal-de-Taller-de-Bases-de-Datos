@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
 {
     /// <summary>
-    /// Modelo que representa un empleado de la librería
+    /// MODELO QUE REPRESENTA UN EMPLEADO DE LA LIBRERÍA
     /// </summary>
 
     internal class Empleado
