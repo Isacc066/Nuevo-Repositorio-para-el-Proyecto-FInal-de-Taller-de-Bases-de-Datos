@@ -77,7 +77,7 @@
             // 
             // txtIdProducto
             // 
-            txtIdProducto.Location = new Point(153, 190);
+            txtIdProducto.Location = new Point(190, 190);
             txtIdProducto.Name = "txtIdProducto";
             txtIdProducto.Size = new Size(125, 27);
             txtIdProducto.TabIndex = 4;
@@ -94,7 +94,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(153, 143);
+            label1.Location = new Point(190, 143);
             label1.Name = "label1";
             label1.Size = new Size(72, 20);
             label1.TabIndex = 6;
