@@ -33,24 +33,24 @@
             dtpFechaFin = new DateTimePicker();
             label1 = new Label();
             label2 = new Label();
-            txtIdUsuario = new TextBox();
+            txtIdProducto = new TextBox();
             label3 = new Label();
             lblContador = new Label();
-            btnBuscar = new Button();
-            btnMostrar = new Button();
+            btnBuscarProducto = new Button();
+            btnMostrarTodos = new Button();
             btnFiltrarAccion = new Button();
             btnFiltrarFecha = new Button();
-            comboBox1 = new ComboBox();
+            cboAccion = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvAuditoria).BeginInit();
             SuspendLayout();
             // 
             // dgvAuditoria
             // 
             dgvAuditoria.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvAuditoria.Location = new Point(765, 209);
+            dgvAuditoria.Location = new Point(665, 28);
             dgvAuditoria.Name = "dgvAuditoria";
             dgvAuditoria.RowHeadersWidth = 51;
-            dgvAuditoria.Size = new Size(300, 188);
+            dgvAuditoria.Size = new Size(780, 383);
             dgvAuditoria.TabIndex = 0;
             // 
             // dtpFechaInicio
@@ -85,48 +85,50 @@
             label2.TabIndex = 4;
             label2.Text = "Fecha Fin";
             // 
-            // txtIdUsuario
+            // txtIdProducto
             // 
-            txtIdUsuario.Location = new Point(169, 209);
-            txtIdUsuario.Name = "txtIdUsuario";
-            txtIdUsuario.Size = new Size(125, 27);
-            txtIdUsuario.TabIndex = 5;
+            txtIdProducto.Location = new Point(211, 209);
+            txtIdProducto.Name = "txtIdProducto";
+            txtIdProducto.Size = new Size(125, 27);
+            txtIdProducto.TabIndex = 5;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(185, 173);
+            label3.Location = new Point(225, 169);
             label3.Name = "label3";
-            label3.Size = new Size(72, 20);
+            label3.Size = new Size(82, 20);
             label3.TabIndex = 6;
-            label3.Text = "IdUsuario";
+            label3.Text = "IdProducto";
             // 
             // lblContador
             // 
             lblContador.AutoSize = true;
-            lblContador.Location = new Point(56, 168);
+            lblContador.Location = new Point(44, 169);
             lblContador.Name = "lblContador";
             lblContador.Size = new Size(71, 20);
             lblContador.TabIndex = 7;
             lblContador.Text = "Contador";
             // 
-            // btnBuscar
+            // btnBuscarProducto
             // 
-            btnBuscar.Location = new Point(169, 275);
-            btnBuscar.Name = "btnBuscar";
-            btnBuscar.Size = new Size(138, 29);
-            btnBuscar.TabIndex = 8;
-            btnBuscar.Text = "Buscar Producto";
-            btnBuscar.UseVisualStyleBackColor = true;
+            btnBuscarProducto.Location = new Point(211, 253);
+            btnBuscarProducto.Name = "btnBuscarProducto";
+            btnBuscarProducto.Size = new Size(138, 29);
+            btnBuscarProducto.TabIndex = 8;
+            btnBuscarProducto.Text = "Buscar Producto";
+            btnBuscarProducto.UseVisualStyleBackColor = true;
+            btnBuscarProducto.Click += btnBuscarProducto_Click;
             // 
-            // btnMostrar
+            // btnMostrarTodos
             // 
-            btnMostrar.Location = new Point(463, 243);
-            btnMostrar.Name = "btnMostrar";
-            btnMostrar.Size = new Size(118, 29);
-            btnMostrar.TabIndex = 9;
-            btnMostrar.Text = "Mostrar Todos";
-            btnMostrar.UseVisualStyleBackColor = true;
+            btnMostrarTodos.Location = new Point(463, 243);
+            btnMostrarTodos.Name = "btnMostrarTodos";
+            btnMostrarTodos.Size = new Size(118, 29);
+            btnMostrarTodos.TabIndex = 9;
+            btnMostrarTodos.Text = "Mostrar Todos";
+            btnMostrarTodos.UseVisualStyleBackColor = true;
+            btnMostrarTodos.Click += btnMostrarTodos_Click;
             // 
             // btnFiltrarAccion
             // 
@@ -136,6 +138,7 @@
             btnFiltrarAccion.TabIndex = 10;
             btnFiltrarAccion.Text = "Filtrar Accion";
             btnFiltrarAccion.UseVisualStyleBackColor = true;
+            btnFiltrarAccion.Click += btnFiltrarAccion_Click;
             // 
             // btnFiltrarFecha
             // 
@@ -145,28 +148,29 @@
             btnFiltrarFecha.TabIndex = 11;
             btnFiltrarFecha.Text = "Filtrar Fecha";
             btnFiltrarFecha.UseVisualStyleBackColor = true;
+            btnFiltrarFecha.Click += btnFiltrarFecha_Click;
             // 
-            // comboBox1
+            // cboAccion
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(463, 161);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 28);
-            comboBox1.TabIndex = 12;
+            cboAccion.FormattingEnabled = true;
+            cboAccion.Location = new Point(463, 161);
+            cboAccion.Name = "cboAccion";
+            cboAccion.Size = new Size(151, 28);
+            cboAccion.TabIndex = 12;
             // 
             // FrmAuditoria
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1154, 450);
-            Controls.Add(comboBox1);
+            ClientSize = new Size(1457, 450);
+            Controls.Add(cboAccion);
             Controls.Add(btnFiltrarFecha);
             Controls.Add(btnFiltrarAccion);
-            Controls.Add(btnMostrar);
-            Controls.Add(btnBuscar);
+            Controls.Add(btnMostrarTodos);
+            Controls.Add(btnBuscarProducto);
             Controls.Add(lblContador);
             Controls.Add(label3);
-            Controls.Add(txtIdUsuario);
+            Controls.Add(txtIdProducto);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(dtpFechaFin);
@@ -174,6 +178,7 @@
             Controls.Add(dgvAuditoria);
             Name = "FrmAuditoria";
             Text = "FrmAuditoria";
+            Load += FrmAuditoria_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAuditoria).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -186,13 +191,13 @@
         private DateTimePicker dtpFechaFin;
         private Label label1;
         private Label label2;
-        private TextBox txtIdUsuario;
+        private TextBox txtIdProducto;
         private Label label3;
         private Label lblContador;
-        private Button btnBuscar;
-        private Button btnMostrar;
+        private Button btnBuscarProducto;
+        private Button btnMostrarTodos;
         private Button btnFiltrarAccion;
         private Button btnFiltrarFecha;
-        private ComboBox comboBox1;
+        private ComboBox cboAccion;
     }
 }
