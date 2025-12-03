@@ -92,7 +92,7 @@
             // 
             lblProductoMasVendido.AutoSize = true;
             lblProductoMasVendido.BackColor = SystemColors.ButtonFace;
-            lblProductoMasVendido.Location = new Point(226, 68);
+            lblProductoMasVendido.Location = new Point(19, 153);
             lblProductoMasVendido.Name = "lblProductoMasVendido";
             lblProductoMasVendido.Size = new Size(50, 20);
             lblProductoMasVendido.TabIndex = 3;
@@ -102,7 +102,7 @@
             // 
             lblTotalVentasHoy.AutoSize = true;
             lblTotalVentasHoy.BackColor = SystemColors.ButtonFace;
-            lblTotalVentasHoy.Location = new Point(432, 68);
+            lblTotalVentasHoy.Location = new Point(385, 68);
             lblTotalVentasHoy.Name = "lblTotalVentasHoy";
             lblTotalVentasHoy.Size = new Size(50, 20);
             lblTotalVentasHoy.TabIndex = 4;
@@ -131,7 +131,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.Info;
-            label2.Location = new Point(226, 38);
+            label2.Location = new Point(19, 112);
             label2.Name = "label2";
             label2.Size = new Size(159, 20);
             label2.TabIndex = 7;
@@ -141,7 +141,7 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Info;
-            label3.Location = new Point(432, 38);
+            label3.Location = new Point(385, 38);
             label3.Name = "label3";
             label3.Size = new Size(143, 20);
             label3.TabIndex = 8;

@@ -195,5 +195,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             cboRol.SelectedIndex = 0;
             dgvUsuarios.ClearSelection();
         }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            ListarUsuarios();
+            dgvUsuarios.ClearSelection();
+        }
     }
 }

@@ -38,6 +38,7 @@
             label1 = new Label();
             label2 = new Label();
             txtIdUsuario = new TextBox();
+            btnListar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -47,20 +48,20 @@
             dgvUsuarios.Location = new Point(482, 60);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersWidth = 51;
-            dgvUsuarios.Size = new Size(798, 467);
+            dgvUsuarios.Size = new Size(409, 467);
             dgvUsuarios.TabIndex = 0;
             dgvUsuarios.CellContentClick += dgvUsuarios_CellClick;
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(12, 70);
+            txtUsuario.Location = new Point(41, 70);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(125, 27);
             txtUsuario.TabIndex = 1;
             // 
             // txtContrasena
             // 
-            txtContrasena.Location = new Point(12, 159);
+            txtContrasena.Location = new Point(41, 160);
             txtContrasena.Name = "txtContrasena";
             txtContrasena.PasswordChar = '*';
             txtContrasena.Size = new Size(125, 27);
@@ -69,14 +70,14 @@
             // cboRol
             // 
             cboRol.FormattingEnabled = true;
-            cboRol.Location = new Point(1, 231);
+            cboRol.Location = new Point(30, 231);
             cboRol.Name = "cboRol";
             cboRol.Size = new Size(151, 28);
             cboRol.TabIndex = 3;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(30, 359);
+            btnAgregar.Location = new Point(58, 359);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(94, 29);
             btnAgregar.TabIndex = 4;
@@ -86,7 +87,7 @@
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(149, 359);
+            btnActualizar.Location = new Point(178, 359);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(94, 29);
             btnActualizar.TabIndex = 5;
@@ -96,7 +97,7 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Location = new Point(305, 359);
+            btnEliminar.Location = new Point(331, 359);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(94, 29);
             btnEliminar.TabIndex = 6;
@@ -108,7 +109,7 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.Info;
-            label1.Location = new Point(41, 37);
+            label1.Location = new Point(78, 38);
             label1.Name = "label1";
             label1.Size = new Size(59, 20);
             label1.TabIndex = 7;
@@ -118,7 +119,7 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = SystemColors.Info;
-            label2.Location = new Point(30, 119);
+            label2.Location = new Point(69, 119);
             label2.Name = "label2";
             label2.Size = new Size(83, 20);
             label2.TabIndex = 8;
@@ -134,11 +135,22 @@
             txtIdUsuario.Size = new Size(125, 27);
             txtIdUsuario.TabIndex = 9;
             // 
+            // btnListar
+            // 
+            btnListar.Location = new Point(236, 241);
+            btnListar.Name = "btnListar";
+            btnListar.Size = new Size(114, 29);
+            btnListar.TabIndex = 10;
+            btnListar.Text = "Listar Usuarios";
+            btnListar.UseVisualStyleBackColor = true;
+            btnListar.Click += btnListar_Click;
+            // 
             // FrmCrudUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1301, 539);
+            Controls.Add(btnListar);
             Controls.Add(txtIdUsuario);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -168,5 +180,6 @@
         private Label label1;
         private Label label2;
         private TextBox txtIdUsuario;
+        private Button btnListar;
     }
 }
