@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using Proyecto_Final_PuntoDeVentaDeLibreria.Models;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
-using Proyecto_Final_PuntoDeVentaDeLibreria.Models;
 
 namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
 {
@@ -15,6 +16,85 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
         public ReporteDAO()
         {
             conexion = new Conexion();
+        }
+
+        public DataTable ReporteProductos(DateTime fechaInicio, DateTime fechaFin)
+        {
+            DataTable tabla = new DataTable();
+            Conexion conexion = new Conexion();
+
+            try
+            {
+                MySqlConnection conn = conexion.Abrir();
+
+                string query = @"
+            SELECT 
+                p.isbn AS ISBN,
+                p.nombre AS Titulo,
+                p.descripcion AS Descripcion,
+                p.precioUnitario AS Costo,
+                SUM(v.cantidad) AS UnidadesVendidas
+            FROM ventas v
+            INNER JOIN productos p ON v.idProducto = p.idProducto
+            WHERE DATE(v.fecha) BETWEEN @inicio AND @fin
+            GROUP BY p.idProducto, p.isbn, p.nombre, p.descripcion, p.precioUnitario
+            ORDER BY p.nombre ASC;";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@inicio", fechaInicio);
+                cmd.Parameters.AddWithValue("@fin", fechaFin);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en ReporteProductos: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+
+            return tabla;
+        }
+
+        public DataTable ReporteVentasPorUsuario(DateTime fechaInicio, DateTime fechaFin)
+        {
+            DataTable tabla = new DataTable();
+            Conexion conexion = new Conexion();
+
+            try
+            {
+                MySqlConnection conn = conexion.Abrir();
+
+                string query = @"
+            SELECT 
+                u.usuario AS Usuario,
+                SUM(v.total) AS MontoVendido
+            FROM ventas v
+            INNER JOIN usuarios u ON v.idUsuario = u.idUsuario
+            WHERE DATE(v.fecha) BETWEEN @inicio AND @fin
+            GROUP BY u.idUsuario, u.usuario
+            ORDER BY MontoVendido DESC;";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@inicio", fechaInicio);
+                cmd.Parameters.AddWithValue("@fin", fechaFin);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(tabla);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error en ReporteVentasPorUsuario: " + ex.Message);
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+
+            return tabla;
         }
 
         /// <summary>

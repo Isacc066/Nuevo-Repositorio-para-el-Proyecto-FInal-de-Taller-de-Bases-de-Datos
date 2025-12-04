@@ -50,8 +50,18 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void btnReportes_Click(object sender, EventArgs e)
         {
-            FrmReportes frmReportes = new FrmReportes();
-            frmReportes.ShowDialog();
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is FrmReportes)
+                {
+                    f.WindowState = FormWindowState.Normal;
+                    f.Activate();
+                    return;
+                }
+            }
+
+            FormReportesDefinitivo frm = new FormReportesDefinitivo();
+            frm.Show();
         }
 
         private void btnCerrarSesion_Click(object sender, EventArgs e)
