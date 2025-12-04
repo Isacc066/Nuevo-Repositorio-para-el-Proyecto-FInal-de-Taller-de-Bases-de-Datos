@@ -46,6 +46,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
+            label6 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
             SuspendLayout();
             // 
@@ -143,7 +144,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             // 
             // txtIdProducto
             // 
-            txtIdProducto.BackColor = SystemColors.GradientInactiveCaption;
+            txtIdProducto.BackColor = SystemColors.Window;
             txtIdProducto.Enabled = false;
             txtIdProducto.Location = new Point(38, 38);
             txtIdProducto.Name = "txtIdProducto";
@@ -208,12 +209,23 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             label5.TabIndex = 16;
             label5.Text = "Stock";
             // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = SystemColors.Info;
+            label6.Location = new Point(85, 9);
+            label6.Name = "label6";
+            label6.Size = new Size(24, 20);
+            label6.TabIndex = 17;
+            label6.Text = "ID";
+            // 
             // FrmCrudProductos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1468, 721);
+            Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -257,5 +269,6 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
         private Label label3;
         private Label label4;
         private Label label5;
+        private Label label6;
     }
 }

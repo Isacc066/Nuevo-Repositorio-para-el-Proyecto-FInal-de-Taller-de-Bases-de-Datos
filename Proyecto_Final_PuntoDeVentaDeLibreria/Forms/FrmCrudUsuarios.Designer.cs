@@ -39,6 +39,7 @@
             label2 = new Label();
             txtIdUsuario = new TextBox();
             btnListar = new Button();
+            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             SuspendLayout();
             // 
@@ -77,7 +78,7 @@
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(219, 400);
+            btnAgregar.Location = new Point(219, 323);
             btnAgregar.Name = "btnAgregar";
             btnAgregar.Size = new Size(160, 55);
             btnAgregar.TabIndex = 4;
@@ -87,7 +88,7 @@
             // 
             // btnActualizar
             // 
-            btnActualizar.Location = new Point(219, 488);
+            btnActualizar.Location = new Point(219, 412);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(160, 51);
             btnActualizar.TabIndex = 5;
@@ -127,18 +128,17 @@
             // 
             // txtIdUsuario
             // 
-            txtIdUsuario.BackColor = SystemColors.GradientInactiveCaption;
+            txtIdUsuario.BackColor = SystemColors.Window;
             txtIdUsuario.Enabled = false;
             txtIdUsuario.Location = new Point(507, 70);
             txtIdUsuario.Name = "txtIdUsuario";
-            txtIdUsuario.PasswordChar = '*';
             txtIdUsuario.ReadOnly = true;
             txtIdUsuario.Size = new Size(125, 27);
             txtIdUsuario.TabIndex = 9;
             // 
             // btnListar
             // 
-            btnListar.Location = new Point(219, 308);
+            btnListar.Location = new Point(219, 498);
             btnListar.Name = "btnListar";
             btnListar.Size = new Size(160, 52);
             btnListar.TabIndex = 10;
@@ -146,12 +146,23 @@
             btnListar.UseVisualStyleBackColor = true;
             btnListar.Click += btnListar_Click;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = SystemColors.Info;
+            label3.Location = new Point(547, 35);
+            label3.Name = "label3";
+            label3.Size = new Size(24, 20);
+            label3.TabIndex = 11;
+            label3.Text = "ID";
+            // 
             // FrmCrudUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1456, 722);
+            Controls.Add(label3);
             Controls.Add(btnListar);
             Controls.Add(txtIdUsuario);
             Controls.Add(label2);
@@ -183,5 +194,6 @@
         private Label label2;
         private TextBox txtIdUsuario;
         private Button btnListar;
+        private Label label3;
     }
 }
