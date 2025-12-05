@@ -1,6 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
 using Proyecto_Final_PuntoDeVentaDeLibreria.Dao;
-using Proyecto_Final_PuntoDeVentaDeLibreria.DAO;
 using Proyecto_Final_PuntoDeVentaDeLibreria.Models;
 using System;
 using System.Collections.Generic;
@@ -8,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Proyecto_Final_PuntoDeVentaDeLibreria.Models
+namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
 {
     internal class DAOUsuarios
     {
