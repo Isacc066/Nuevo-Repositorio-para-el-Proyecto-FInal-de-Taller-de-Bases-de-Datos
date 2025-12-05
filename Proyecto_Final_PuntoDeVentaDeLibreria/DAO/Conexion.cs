@@ -22,6 +22,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
         public Conexion()
         {
             conn = new MySqlConnection("Server=localhost;Database=VENTAS;Uid=root;Pwd=Tacodeguayaba16;");
+
         }
 
         public MySqlConnection Abrir()

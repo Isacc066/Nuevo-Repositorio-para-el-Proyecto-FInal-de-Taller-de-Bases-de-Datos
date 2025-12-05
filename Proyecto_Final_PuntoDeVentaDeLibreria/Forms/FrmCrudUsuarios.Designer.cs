@@ -175,6 +175,7 @@
             Controls.Add(txtUsuario);
             Controls.Add(dgvUsuarios);
             Name = "FrmCrudUsuarios";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CRUD De Usuarios";
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             ResumeLayout(false);

@@ -193,6 +193,7 @@
             Controls.Add(btnEditar);
             Controls.Add(btnAgregar);
             Name = "FrmCrudEmpleados";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CRUD De Empleados";
             ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
             ResumeLayout(false);

@@ -121,6 +121,7 @@
             Controls.Add(btnProductos);
             Controls.Add(btnUsuarios);
             Name = "FormMenuAdmin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menú De Administrador";
             Load += FormMenuAdmin_Load;
             ResumeLayout(false);

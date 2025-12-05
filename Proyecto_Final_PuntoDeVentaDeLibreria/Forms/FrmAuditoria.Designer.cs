@@ -182,6 +182,7 @@
             Controls.Add(dtpFechaInicio);
             Controls.Add(dgvAuditoria);
             Name = "FrmAuditoria";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Auditoría De Productos";
             Load += FrmAuditoria_Load;
             ((System.ComponentModel.ISupportInitialize)dgvAuditoria).EndInit();

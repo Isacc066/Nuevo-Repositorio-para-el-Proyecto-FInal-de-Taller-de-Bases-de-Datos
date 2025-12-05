@@ -151,6 +151,7 @@
             Controls.Add(txtCantidad);
             Controls.Add(txtISBN);
             Name = "FrmVentas";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Ventas";
             Load += FrmVentas_Load;
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).EndInit();

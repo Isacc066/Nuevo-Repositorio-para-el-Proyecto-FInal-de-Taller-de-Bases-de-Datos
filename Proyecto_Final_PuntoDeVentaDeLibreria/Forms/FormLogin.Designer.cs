@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             button1 = new Button();
             label1 = new Label();
             txtUsuario = new TextBox();
@@ -38,9 +39,10 @@
             // 
             // button1
             // 
-            button1.Location = new Point(666, 63);
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.Location = new Point(666, 101);
             button1.Name = "button1";
-            button1.Size = new Size(151, 29);
+            button1.Size = new Size(220, 57);
             button1.TabIndex = 0;
             button1.Text = "Probar Conexion";
             button1.UseVisualStyleBackColor = true;
@@ -106,6 +108,7 @@
             Controls.Add(label1);
             Controls.Add(button1);
             Name = "FormLogin";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio de sesión";
             Load += FormLogin_Load;
             ResumeLayout(false);

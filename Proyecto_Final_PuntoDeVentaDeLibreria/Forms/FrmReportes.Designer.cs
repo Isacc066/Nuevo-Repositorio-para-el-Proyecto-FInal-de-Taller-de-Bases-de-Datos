@@ -351,6 +351,7 @@
             Controls.Add(lblResumen);
             Controls.Add(dgvReporte);
             Name = "FrmReportes";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Reportes De Ventas";
             ((System.ComponentModel.ISupportInitialize)dgvReporte).EndInit();
             gbEstadisticas.ResumeLayout(false);

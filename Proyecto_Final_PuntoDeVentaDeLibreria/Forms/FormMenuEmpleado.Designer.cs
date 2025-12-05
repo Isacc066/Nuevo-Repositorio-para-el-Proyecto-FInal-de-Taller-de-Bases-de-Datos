@@ -85,6 +85,7 @@
             Controls.Add(btnReportes);
             Controls.Add(btnVentas);
             Name = "FormMenuEmpleado";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Menú De Empleado";
             Load += FormMenuEmpleado_Load;
             ResumeLayout(false);

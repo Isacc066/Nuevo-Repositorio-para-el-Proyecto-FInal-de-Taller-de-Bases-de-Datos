@@ -244,6 +244,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             Controls.Add(txtDescripcion);
             Controls.Add(txtNombre);
             Name = "FrmCrudProductos";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "CRUD De Productos";
             ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
             ResumeLayout(false);

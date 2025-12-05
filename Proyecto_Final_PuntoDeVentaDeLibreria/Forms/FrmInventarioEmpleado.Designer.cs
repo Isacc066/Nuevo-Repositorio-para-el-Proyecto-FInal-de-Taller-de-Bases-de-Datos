@@ -53,6 +53,7 @@
             ClientSize = new Size(1486, 725);
             Controls.Add(dgvInventario);
             Name = "FrmInventarioEmpleado";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Inventario De Empleado";
             Load += FrmInventarioEmpleado_Load;
             ((System.ComponentModel.ISupportInitialize)dgvInventario).EndInit();
