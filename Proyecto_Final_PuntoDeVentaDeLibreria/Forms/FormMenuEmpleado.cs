@@ -22,8 +22,15 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void btnVentas_Click(object sender, EventArgs e)
         {
-            FrmVentas frm = new FrmVentas(idUsuarioEnSesion);
-            frm.ShowDialog();
+            try
+            {
+                FrmVentasNuevo frm = new FrmVentasNuevo(idUsuarioEnSesion);
+                frm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error al abrir el módulo de ventas: " + ex.Message);
+            }
         }
 
         private void btnReportes_Click(object sender, EventArgs e)

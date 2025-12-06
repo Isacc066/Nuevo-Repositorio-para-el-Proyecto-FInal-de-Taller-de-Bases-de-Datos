@@ -11,6 +11,8 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Dao
     {
         public static string HashSHA256(string texto)
         {
+            if (texto == null)
+                return string.Empty;
             using (SHA256 sha256 = SHA256.Create())
             {
                 byte[] bytes = Encoding.UTF8.GetBytes(texto);

@@ -77,6 +77,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
                 MessageBox.Show("Error al listar productos: " + ex.Message, "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                // Opcional: asegura que el grid vuelva a habilitarse
+                dgvProductos.Enabled = true;
+            }
         }
 
         private void FrmCrudProductos_Load(object sender, EventArgs e)
@@ -94,14 +99,22 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
         {
             if (e.RowIndex < 0) return;
 
-            var p = (Producto)dgvProductos.Rows[e.RowIndex].DataBoundItem;
+            try
+            {
+                var p = (Producto)dgvProductos.Rows[e.RowIndex].DataBoundItem;
 
-            txtIdProducto.Text = p.IdProducto.ToString();
-            txtISBN.Text = p.ISBN;
-            txtNombre.Text = p.Nombre;
-            txtDescripcion.Text = p.Descripcion;
-            txtPrecio.Text = p.Precio.ToString();
-            txtStock.Text = p.Stock.ToString();
+                txtIdProducto.Text = p.IdProducto.ToString();
+                txtISBN.Text = p.ISBN;
+                txtNombre.Text = p.Nombre;
+                txtDescripcion.Text = p.Descripcion;
+                txtPrecio.Text = p.Precio.ToString();
+                txtStock.Text = p.Stock.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al seleccionar producto: " + ex.Message,
+                    "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -129,6 +142,10 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             catch (Exception ex)
             {
                 MessageBox.Show("Error insertando: " + ex.Message, "Error");
+            }
+            finally
+            {
+                btnAgregar.Enabled = true;
             }
         }
 
@@ -165,6 +182,10 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             {
                 MessageBox.Show("Error actualizando: " + ex.Message, "Error");
             }
+            finally
+            {
+                btnActualizar.Enabled = true;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -191,6 +212,10 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             catch (Exception ex)
             {
                 MessageBox.Show("Error eliminando: " + ex.Message, "Error");
+            }
+            finally
+            {
+                btnEliminar.Enabled = true;
             }
         }
 

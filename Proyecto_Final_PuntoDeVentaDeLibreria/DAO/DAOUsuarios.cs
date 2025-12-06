@@ -18,6 +18,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
             conexion = new Conexion();
         }
 
+        // -----------------------------
+        // LOGIN
+        // -----------------------------
         public Usuario? Login(string usuario, string contrasenaHash)
         {
             Usuario? u = null;
@@ -43,6 +46,10 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
                     };
                 }
             }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Error en Login: " + ex.Message);
+            }
             finally
             {
                 conexion.Cerrar();
@@ -51,10 +58,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
             return u;
         }
 
-        /// <summary>
-        /// LISTAR USUARIOS
-        /// </summary>
-        /// <returns></returns>
+        // -----------------------------
+        // LISTAR
+        // -----------------------------
         public List<Usuario> Listar()
         {
             List<Usuario> lista = new();
@@ -73,9 +79,13 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
                         IdUsuario = reader.GetInt32("idUsuario"),
                         NombreUsuario = reader.GetString("usuario"),
                         Rol = reader.GetString("rol"),
-                        Contrasena = "" // no mostramos contraseñas
+                        Contrasena = ""
                     });
                 }
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Error al listar usuarios: " + ex.Message);
             }
             finally
             {
@@ -85,11 +95,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
             return lista;
         }
 
-        /// <summary>
-        /// INSERTAR USUARIO
-        /// </summary>
-        /// <param name="u"></param>
-        /// <returns></returns>
+        // -----------------------------
+        // INSERTAR
+        // -----------------------------
         public bool Insertar(Usuario u)
         {
             try
@@ -98,11 +106,17 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
                 using var cmd = new MySqlCommand("spInsertarUsuario", conn);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
+                // NOTA: Mantengo EXACTAMENTE tus parámetros
                 cmd.Parameters.AddWithValue("@pUsuario", u.NombreUsuario);
                 cmd.Parameters.AddWithValue("@pContrasena", u.Contrasena);
                 cmd.Parameters.AddWithValue("@pRol", u.Rol);
 
                 return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Error al insertar usuario: " + ex.Message);
+                return false;
             }
             finally
             {
@@ -110,11 +124,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
             }
         }
 
-        /// <summary>
-        /// ACTUALIZAR USUARIO
-        /// </summary>
-        /// <param name="u"></param>
-        /// <returns></returns>
+        // -----------------------------
+        // ACTUALIZAR
+        // -----------------------------
         public bool Actualizar(Usuario u)
         {
             try
@@ -130,17 +142,20 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
 
                 return cmd.ExecuteNonQuery() > 0;
             }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Error al actualizar usuario: " + ex.Message);
+                return false;
+            }
             finally
             {
                 conexion.Cerrar();
             }
         }
 
-        /// <summary>
-        /// ELIMINAR USUARIO
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
+        // -----------------------------
+        // ELIMINAR
+        // -----------------------------
         public bool Eliminar(int id)
         {
             try
@@ -152,6 +167,11 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
                 cmd.Parameters.AddWithValue("@pId", id);
 
                 return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Error al eliminar usuario: " + ex.Message);
+                return false;
             }
             finally
             {

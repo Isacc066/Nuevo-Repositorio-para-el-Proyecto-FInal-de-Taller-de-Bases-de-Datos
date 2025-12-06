@@ -28,18 +28,19 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
 
         private void CargarInventario()
         {
-            var lista = productoDAO.ListarTodos();
+            try
+            {
+                var lista = productoDAO.ListarTodos();
 
-            dgvInventario.DataSource = null;
-            dgvInventario.DataSource = lista;
+                dgvInventario.DataSource = null;
+                dgvInventario.DataSource = lista;
 
-            // Etiquetas
-            dgvInventario.Columns["IdProducto"].HeaderText = "ID";
-            dgvInventario.Columns["ISBN"].HeaderText = "ISBN";
-            dgvInventario.Columns["Nombre"].HeaderText = "Nombre";
-            dgvInventario.Columns["Descripcion"].HeaderText = "Descripción";
-            dgvInventario.Columns["Precio"].HeaderText = "Precio";
-            dgvInventario.Columns["Stock"].HeaderText = "Stock";
+                // etiquetas...
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar inventario: " + ex.Message);
+            }
         }
     }
 }

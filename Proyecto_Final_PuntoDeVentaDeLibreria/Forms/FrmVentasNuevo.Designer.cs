@@ -1,6 +1,6 @@
 ﻿namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
 {
-    partial class FrmVentas
+    partial class FrmVentasNuevo
     {
         /// <summary>
         /// Required designer variable.
@@ -31,11 +31,11 @@
             txtISBN = new TextBox();
             txtCantidad = new TextBox();
             btnAgregar = new Button();
-            dgvCarrito = new DataGridView();
-            label1 = new Label();
-            label2 = new Label();
             btnPagar = new Button();
             btnCancelar = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            dgvCarrito = new DataGridView();
             lblTotal = new Label();
             label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).BeginInit();
@@ -43,83 +43,83 @@
             // 
             // txtISBN
             // 
-            txtISBN.Location = new Point(193, 85);
+            txtISBN.Location = new Point(204, 61);
             txtISBN.Name = "txtISBN";
-            txtISBN.Size = new Size(142, 27);
+            txtISBN.Size = new Size(125, 27);
             txtISBN.TabIndex = 0;
             // 
             // txtCantidad
             // 
-            txtCantidad.Location = new Point(395, 85);
+            txtCantidad.Location = new Point(448, 61);
             txtCantidad.Name = "txtCantidad";
             txtCantidad.Size = new Size(125, 27);
             txtCantidad.TabIndex = 1;
             // 
             // btnAgregar
             // 
-            btnAgregar.Location = new Point(28, 141);
+            btnAgregar.Location = new Point(43, 109);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(108, 44);
+            btnAgregar.Size = new Size(94, 29);
             btnAgregar.TabIndex = 2;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = true;
             btnAgregar.Click += btnAgregar_Click;
             // 
-            // dgvCarrito
-            // 
-            dgvCarrito.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvCarrito.Location = new Point(157, 129);
-            dgvCarrito.Name = "dgvCarrito";
-            dgvCarrito.RowHeadersWidth = 51;
-            dgvCarrito.Size = new Size(615, 584);
-            dgvCarrito.TabIndex = 3;
-            dgvCarrito.CellClick += dgvCarrito_CellClick;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.Info;
-            label1.Location = new Point(193, 47);
-            label1.Name = "label1";
-            label1.Size = new Size(41, 20);
-            label1.TabIndex = 4;
-            label1.Text = "ISBN";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.Info;
-            label2.Location = new Point(395, 47);
-            label2.Name = "label2";
-            label2.Size = new Size(69, 20);
-            label2.TabIndex = 5;
-            label2.Text = "Cantidad";
-            // 
             // btnPagar
             // 
-            btnPagar.Location = new Point(28, 245);
+            btnPagar.Location = new Point(43, 186);
             btnPagar.Name = "btnPagar";
-            btnPagar.Size = new Size(108, 45);
-            btnPagar.TabIndex = 6;
+            btnPagar.Size = new Size(94, 29);
+            btnPagar.TabIndex = 3;
             btnPagar.Text = "Pagar";
             btnPagar.UseVisualStyleBackColor = true;
             btnPagar.Click += btnPagar_Click;
             // 
             // btnCancelar
             // 
-            btnCancelar.Location = new Point(28, 432);
+            btnCancelar.Location = new Point(43, 271);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(108, 52);
-            btnCancelar.TabIndex = 7;
+            btnCancelar.Size = new Size(94, 29);
+            btnCancelar.TabIndex = 4;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += btnCancelar_Click;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = SystemColors.Info;
+            label1.Location = new Point(239, 21);
+            label1.Name = "label1";
+            label1.Size = new Size(41, 20);
+            label1.TabIndex = 5;
+            label1.Text = "ISBN";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = SystemColors.Info;
+            label2.Location = new Point(486, 21);
+            label2.Name = "label2";
+            label2.Size = new Size(69, 20);
+            label2.TabIndex = 6;
+            label2.Text = "Cantidad";
+            // 
+            // dgvCarrito
+            // 
+            dgvCarrito.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvCarrito.Location = new Point(204, 139);
+            dgvCarrito.Name = "dgvCarrito";
+            dgvCarrito.RowHeadersWidth = 51;
+            dgvCarrito.Size = new Size(610, 251);
+            dgvCarrito.TabIndex = 7;
+            dgvCarrito.CellClick += dgvCarrito_CellClick;
+            // 
             // lblTotal
             // 
             lblTotal.AutoSize = true;
-            lblTotal.BackColor = SystemColors.ButtonFace;
-            lblTotal.Location = new Point(650, 85);
+            lblTotal.BackColor = SystemColors.ActiveBorder;
+            lblTotal.Location = new Point(735, 64);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(42, 20);
             lblTotal.TabIndex = 8;
@@ -129,32 +129,31 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = SystemColors.Info;
-            label3.Location = new Point(650, 47);
+            label3.Location = new Point(727, 21);
             label3.Name = "label3";
             label3.Size = new Size(42, 20);
             label3.TabIndex = 9;
             label3.Text = "Total";
             // 
-            // FrmVentas
+            // FrmVentasNuevo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(1350, 725);
+            ClientSize = new Size(1280, 450);
             Controls.Add(label3);
             Controls.Add(lblTotal);
-            Controls.Add(btnCancelar);
-            Controls.Add(btnPagar);
+            Controls.Add(dgvCarrito);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(dgvCarrito);
+            Controls.Add(btnCancelar);
+            Controls.Add(btnPagar);
             Controls.Add(btnAgregar);
             Controls.Add(txtCantidad);
             Controls.Add(txtISBN);
-            Name = "FrmVentas";
+            Name = "FrmVentasNuevo";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Ventas";
-            KeyDown += txtISBN_KeyDown;
+            Text = "Módulo de Ventas";
             ((System.ComponentModel.ISupportInitialize)dgvCarrito).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -165,11 +164,11 @@
         private TextBox txtISBN;
         private TextBox txtCantidad;
         private Button btnAgregar;
-        private DataGridView dgvCarrito;
-        private Label label1;
-        private Label label2;
         private Button btnPagar;
         private Button btnCancelar;
+        private Label label1;
+        private Label label2;
+        private DataGridView dgvCarrito;
         private Label lblTotal;
         private Label label3;
     }

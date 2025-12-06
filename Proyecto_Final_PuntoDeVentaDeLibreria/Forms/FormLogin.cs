@@ -11,7 +11,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnProbarConexion_Click(object sender, EventArgs e)
         {
             //IT'S HERE
             // Evento eliminado, requerido por el diseñador
@@ -45,45 +45,46 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            DAOUsuarios dao = new DAOUsuarios();
-
-            string usuario = txtUsuario.Text.Trim();
-            string contrasena = txtContrasena.Text.Trim();
-
-            if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contrasena))
+            try
             {
-                MessageBox.Show("Debe ingresar usuario y contraseña.");
-                return;
+                DAOUsuarios dao = new DAOUsuarios();
+
+                string usuario = txtUsuario.Text.Trim();
+                string contrasena = txtContrasena.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contrasena))
+                {
+                    MessageBox.Show("Debe ingresar usuario y contraseña.");
+                    return;
+                }
+
+                string contrasenaHash = Seguridad.HashSHA256(contrasena);
+
+                Usuario? u = dao.Login(usuario, contrasenaHash);
+
+                if (u == null)
+                {
+                    MessageBox.Show("Usuario o contraseña incorrectos.");
+                    return;
+                }
+
+                MessageBox.Show("Bienvenido, " + u.NombreUsuario);
+
+                if (u.Rol == "admin")
+                {
+                    new FormMenuAdmin(u.IdUsuario).Show();
+                }
+                else
+                {
+                    new FormMenuEmpleado(u.IdUsuario).Show();
+                }
+
+                this.Hide();
             }
-
-            // Convertir a hash la contraseña antes de comparar
-            string contrasenaHash = Seguridad.HashSHA256(contrasena);
-
-            // Ahora dao.Login devuelve un Usuario completo O null
-            Usuario? u = dao.Login(usuario, contrasenaHash);
-
-            if (u == null)
+            catch (Exception ex)
             {
-                MessageBox.Show("Usuario o contraseña incorrectos.");
-                return;
+                MessageBox.Show("Ocurrió un error en el Login: " + ex.Message);
             }
-
-            // Mensaje opcional
-            MessageBox.Show("Bienvenido, " + u.NombreUsuario);
-
-            // Abrir menú según el rol
-            if (u.Rol == "admin")
-            {
-                FormMenuAdmin menu = new FormMenuAdmin(u.IdUsuario);
-                menu.Show();
-            }
-            else
-            {
-                FormMenuEmpleado menu = new FormMenuEmpleado(u.IdUsuario);
-                menu.Show();
-            }
-
-            this.Hide();
         }
     }
 }

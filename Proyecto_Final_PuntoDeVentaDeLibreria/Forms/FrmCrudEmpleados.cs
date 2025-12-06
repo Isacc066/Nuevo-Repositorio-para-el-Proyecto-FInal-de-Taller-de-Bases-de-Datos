@@ -58,8 +58,15 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
 
         private void FrmCrudEmpleados_Load(object sender, EventArgs e)
         {
-            CargarEmpleados();
-            HabilitarFormulario(false);
+            try
+            {
+                CargarEmpleados();
+                HabilitarFormulario(false);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al cargar empleados: " + ex.Message);
+            }
         }
         public FrmCrudEmpleados()
         {

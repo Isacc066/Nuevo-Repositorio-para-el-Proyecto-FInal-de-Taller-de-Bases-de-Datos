@@ -17,13 +17,19 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
         private readonly VentaDAO ventaDAO;
         private List<DetalleVenta> carrito;
         private int idUsuarioEnSesion;
+
         public FrmVentas(int idUsuario)
         {
             InitializeComponent();
+
             ventaDAO = new VentaDAO();
             carrito = new List<DetalleVenta>();
             idUsuarioEnSesion = idUsuario;
 
+            // EVENTOS
+            txtISBN.KeyDown += txtISBN_KeyDown;
+
+            // CONFIGURACIÓN
             ConfigurarGrid();
             txtCantidad.Text = "1";
             ActualizarTotal();
@@ -33,7 +39,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
         {
             dgvCarrito.ReadOnly = true;
             dgvCarrito.AllowUserToAddRows = false;
+            dgvCarrito.AllowUserToDeleteRows = false;
             dgvCarrito.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvCarrito.MultiSelect = false;
             dgvCarrito.AutoGenerateColumns = false;
 
             dgvCarrito.Columns.Clear();
@@ -43,7 +51,6 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
             dgvCarrito.Columns.Add(new DataGridViewTextBoxColumn { Name = "PrecioUnitario", DataPropertyName = "PrecioUnitario", HeaderText = "Precio" });
             dgvCarrito.Columns.Add(new DataGridViewTextBoxColumn { Name = "Subtotal", DataPropertyName = "Subtotal", HeaderText = "Subtotal" });
 
-            dgvCarrito.DataSource = null;
             dgvCarrito.DataSource = carrito;
         }
 
@@ -51,65 +58,96 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
         {
             dgvCarrito.DataSource = null;
             dgvCarrito.DataSource = carrito;
+
+            if (dgvCarrito.Rows.Count > 0)
+                dgvCarrito.Rows[dgvCarrito.Rows.Count - 1].Selected = true;
+
             ActualizarTotal();
         }
 
         private void ActualizarTotal()
         {
-            decimal total = 0m;
-            foreach (var d in carrito) total += d.Subtotal;
+            decimal total = carrito.Sum(x => x.Subtotal);
             lblTotal.Text = total.ToString("C2");
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            string isbn = txtISBN.Text.Trim();
-            if (string.IsNullOrEmpty(isbn)) { MessageBox.Show("Ingrese ISBN"); return; }
-
-            if (!int.TryParse(txtCantidad.Text.Trim(), out int cantidad) || cantidad <= 0)
+            try
             {
-                MessageBox.Show("Cantidad inválida");
-                return;
-            }
-
-            // Obtener producto
-            var producto = ventaDAO.ObtenerProductoPorISBN(isbn);
-            if (producto == null) { MessageBox.Show("Producto no encontrado"); return; }
-
-            if (producto.Stock < cantidad) { MessageBox.Show("No hay stock suficiente"); return; }
-
-            // Verificar si ya está en carrito
-            var existe = carrito.Find(x => x.IdProducto == producto.IdProducto);
-            if (existe != null)
-            {
-                if (producto.Stock < existe.Cantidad + cantidad) { MessageBox.Show("No hay stock suficiente"); return; }
-                existe.Cantidad += cantidad;
-            }
-            else
-            {
-                carrito.Add(new DetalleVenta
+                string isbn = txtISBN.Text.Trim();
+                if (string.IsNullOrEmpty(isbn))
                 {
-                    IdProducto = producto.IdProducto,
-                    Cantidad = cantidad,
-                    PrecioUnitario = producto.Precio,
-                    NombreProducto = producto.Nombre,
-                    ISBN = producto.ISBN
-                });
-            }
+                    MessageBox.Show("Ingrese ISBN");
+                    return;
+                }
 
-            ActualizarGrid();
-            txtISBN.Clear();
-            txtCantidad.Text = "1";
-            txtISBN.Focus();
+                if (!int.TryParse(txtCantidad.Text.Trim(), out int cantidad) || cantidad <= 0)
+                {
+                    MessageBox.Show("Cantidad inválida");
+                    return;
+                }
+
+                var producto = ventaDAO.ObtenerProductoPorISBN(isbn);
+                if (producto == null)
+                {
+                    MessageBox.Show("Producto no encontrado");
+                    return;
+                }
+
+                if (producto.Stock < cantidad)
+                {
+                    MessageBox.Show("No hay stock suficiente");
+                    return;
+                }
+
+                var existe = carrito.Find(x => x.IdProducto == producto.IdProducto);
+
+                if (existe != null)
+                {
+                    if (producto.Stock < existe.Cantidad + cantidad)
+                    {
+                        MessageBox.Show("No hay stock suficiente");
+                        return;
+                    }
+
+                    existe.Cantidad += cantidad;
+                }
+                else
+                {
+                    carrito.Add(new DetalleVenta
+                    {
+                        IdProducto = producto.IdProducto,
+                        Cantidad = cantidad,
+                        PrecioUnitario = producto.Precio,
+                        NombreProducto = producto.Nombre,
+                        ISBN = producto.ISBN
+                    });
+                }
+
+                ActualizarGrid();
+                txtISBN.Clear();
+                txtCantidad.Text = "1";
+                txtISBN.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al agregar producto: " + ex.Message);
+            }
         }
 
         private void btnPagar_Click(object sender, EventArgs e)
         {
-            if (carrito.Count == 0) { MessageBox.Show("Carrito vacío"); return; }
+            if (carrito.Count == 0)
+            {
+                MessageBox.Show("Carrito vacío");
+                return;
+            }
 
             try
             {
                 int idVenta = ventaDAO.RegistrarVentaConDetalle(idUsuarioEnSesion, carrito);
+
                 if (idVenta > 0)
                 {
                     MessageBox.Show($"Venta registrada correctamente. ID venta: {idVenta}");
@@ -125,18 +163,36 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.Forms
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            carrito.Clear();
-            ActualizarGrid();
+            if (dgvCarrito.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Seleccione un producto para cancelar.");
+                return;
+            }
+
+            int index = dgvCarrito.SelectedRows[0].Index;
+
+            if (index >= 0 && index < carrito.Count)
+            {
+                carrito.RemoveAt(index);
+                ActualizarGrid();
+            }
         }
 
-        private void FrmVentas_Load(object sender, EventArgs e)
+        private void txtISBN_KeyDown(object? sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnAgregar.PerformClick();
+                e.SuppressKeyPress = true;
+            }
         }
 
-        private void txtISBN_KeyDown(object sender, KeyEventArgs e)
+        private void dgvCarrito_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter) btnAgregar_Click(sender, e);
+            // Evita error índice -1
+            if (e.RowIndex < 0) return;
+
+            dgvCarrito.Rows[e.RowIndex].Selected = true;
         }
     }
 }

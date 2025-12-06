@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
-            button1 = new Button();
+            btnProbarConexion = new Button();
             label1 = new Label();
             txtUsuario = new TextBox();
             txtContrasena = new TextBox();
-            button2 = new Button();
+            btnIngresar = new Button();
             label2 = new Label();
             SuspendLayout();
             // 
-            // button1
+            // btnProbarConexion
             // 
-            button1.Image = (Image)resources.GetObject("button1.Image");
-            button1.Location = new Point(666, 101);
-            button1.Name = "button1";
-            button1.Size = new Size(220, 57);
-            button1.TabIndex = 0;
-            button1.Text = "Probar Conexion";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnProbarConexion.Image = (Image)resources.GetObject("btnProbarConexion.Image");
+            btnProbarConexion.Location = new Point(666, 101);
+            btnProbarConexion.Name = "btnProbarConexion";
+            btnProbarConexion.Size = new Size(220, 57);
+            btnProbarConexion.TabIndex = 0;
+            btnProbarConexion.Text = "Probar Conexion";
+            btnProbarConexion.UseVisualStyleBackColor = true;
+            btnProbarConexion.Click += btnProbarConexion_Click;
             // 
             // label1
             // 
@@ -75,15 +75,15 @@
             txtContrasena.Size = new Size(146, 27);
             txtContrasena.TabIndex = 3;
             // 
-            // button2
+            // btnIngresar
             // 
-            button2.Location = new Point(620, 431);
-            button2.Name = "button2";
-            button2.Size = new Size(228, 77);
-            button2.TabIndex = 4;
-            button2.Text = "Ingresar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += btnIngresar_Click;
+            btnIngresar.Location = new Point(620, 431);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(228, 77);
+            btnIngresar.TabIndex = 4;
+            btnIngresar.Text = "Ingresar";
+            btnIngresar.UseVisualStyleBackColor = true;
+            btnIngresar.Click += btnIngresar_Click;
             // 
             // label2
             // 
@@ -102,11 +102,11 @@
             BackColor = SystemColors.GradientInactiveCaption;
             ClientSize = new Size(1432, 726);
             Controls.Add(label2);
-            Controls.Add(button2);
+            Controls.Add(btnIngresar);
             Controls.Add(txtContrasena);
             Controls.Add(txtUsuario);
             Controls.Add(label1);
-            Controls.Add(button1);
+            Controls.Add(btnProbarConexion);
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio de sesión";
@@ -117,11 +117,11 @@
 
         #endregion
 
-        private Button button1;
+        private Button btnProbarConexion;
         private Label label1;
         private TextBox txtUsuario;
         private TextBox txtContrasena;
-        private Button button2;
+        private Button btnIngresar;
         private Label label2;
     }
 }

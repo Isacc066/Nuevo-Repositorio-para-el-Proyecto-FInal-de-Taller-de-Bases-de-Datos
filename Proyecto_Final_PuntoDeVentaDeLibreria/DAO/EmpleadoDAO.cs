@@ -2,6 +2,7 @@
 using Proyecto_Final_PuntoDeVentaDeLibreria.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,33 +15,33 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
 
     internal class EmpleadoDAO
     {
-        /// <summary>
-        /// INSERTA UN NUEVO EMPLEADO USANDO STORED PROCEDURE
-        /// </summary>
-        /// <param name="empleado"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        // --------------------------------------------------------
+        // INSERTAR
+        // --------------------------------------------------------
         public bool Insertar(Empleado empleado)
         {
             Conexion conexion = new Conexion();
+
             try
             {
-                MySqlConnection conn = conexion.Abrir();
-                MySqlCommand cmd = new MySqlCommand("spInsertarEmpleado", conn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                var conn = conexion.Abrir();
 
-                // Parámetros del stored procedure
-                cmd.Parameters.AddWithValue("pNombre", empleado.Nombre);
-                cmd.Parameters.AddWithValue("pApellido", empleado.Apellido);
-                cmd.Parameters.AddWithValue("pTelefono", empleado.Telefono);
-                cmd.Parameters.AddWithValue("pDireccion", empleado.Direccion);
+                using (var cmd = new MySqlCommand("spInsertarEmpleado", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                int filasAfectadas = cmd.ExecuteNonQuery();
-                return filasAfectadas > 0;
+                    cmd.Parameters.AddWithValue("pNombre", empleado.Nombre);
+                    cmd.Parameters.AddWithValue("pApellido", empleado.Apellido);
+                    cmd.Parameters.AddWithValue("pTelefono", empleado.Telefono);
+                    cmd.Parameters.AddWithValue("pDireccion", empleado.Direccion);
+
+                    return cmd.ExecuteNonQuery() > 0;
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al insertar empleado: {ex.Message}");
+                System.Windows.Forms.MessageBox.Show("Error al insertar empleado: " + ex.Message);
+                return false;
             }
             finally
             {
@@ -48,34 +49,34 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
             }
         }
 
-        /// <summary>
-        /// ACTUALIZA UN EMPLEADO EXISTENTE USANDO STORED PROCEUDRE
-        /// </summary>
-        /// <param name="empleado"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        // --------------------------------------------------------
+        // ACTUALIZAR
+        // --------------------------------------------------------
         public bool Actualizar(Empleado empleado)
         {
             Conexion conexion = new Conexion();
+
             try
             {
-                MySqlConnection conn = conexion.Abrir();
-                MySqlCommand cmd = new MySqlCommand("spActualizarEmpleado", conn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                var conn = conexion.Abrir();
 
-                // Parámetros del stored procedure
-                cmd.Parameters.AddWithValue("pId", empleado.IdEmpleado);
-                cmd.Parameters.AddWithValue("pNombre", empleado.Nombre);
-                cmd.Parameters.AddWithValue("pApellido", empleado.Apellido);
-                cmd.Parameters.AddWithValue("pTelefono", empleado.Telefono);
-                cmd.Parameters.AddWithValue("pDireccion", empleado.Direccion);
+                using (var cmd = new MySqlCommand("spActualizarEmpleado", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
 
-                int filasAfectadas = cmd.ExecuteNonQuery();
-                return filasAfectadas > 0;
+                    cmd.Parameters.AddWithValue("pId", empleado.IdEmpleado);
+                    cmd.Parameters.AddWithValue("pNombre", empleado.Nombre);
+                    cmd.Parameters.AddWithValue("pApellido", empleado.Apellido);
+                    cmd.Parameters.AddWithValue("pTelefono", empleado.Telefono);
+                    cmd.Parameters.AddWithValue("pDireccion", empleado.Direccion);
+
+                    return cmd.ExecuteNonQuery() > 0;
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al actualizar empleado: {ex.Message}");
+                System.Windows.Forms.MessageBox.Show("Error al actualizar empleado: " + ex.Message);
+                return false;
             }
             finally
             {
@@ -83,29 +84,29 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
             }
         }
 
-        /// <summary>
-        /// ELIMINA UN NEMPLEADO USANDO STORED PROCEDURE
-        /// </summary>
-        /// <param name="idEmpleado"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        // --------------------------------------------------------
+        // ELIMINAR
+        // --------------------------------------------------------
         public bool Eliminar(int idEmpleado)
         {
             Conexion conexion = new Conexion();
+
             try
             {
-                MySqlConnection conn = conexion.Abrir();
-                MySqlCommand cmd = new MySqlCommand("spEliminarEmpleado", conn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                var conn = conexion.Abrir();
 
-                cmd.Parameters.AddWithValue("pId", idEmpleado);
+                using (var cmd = new MySqlCommand("spEliminarEmpleado", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("pId", idEmpleado);
 
-                int filasAfectadas = cmd.ExecuteNonQuery();
-                return filasAfectadas > 0;
+                    return cmd.ExecuteNonQuery() > 0;
+                }
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al eliminar empleado: {ex.Message}");
+                System.Windows.Forms.MessageBox.Show("Error al eliminar empleado: " + ex.Message);
+                return false;
             }
             finally
             {
@@ -113,11 +114,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
             }
         }
 
-        /// <summary>
-        /// LISTA TODOS LOS EMPLEADOS USANDO STORED PROCEDURE
-        /// </summary>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        // --------------------------------------------------------
+        // LISTAR TODOS
+        // --------------------------------------------------------
         public List<Empleado> ListarTodos()
         {
             List<Empleado> empleados = new List<Empleado>();
@@ -125,32 +124,34 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
 
             try
             {
-                MySqlConnection conn = conexion.Abrir();
-                MySqlCommand cmd = new MySqlCommand("spListarEmpleados", conn);
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                var conn = conexion.Abrir();
 
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+                using (var cmd = new MySqlCommand("spListarEmpleados", conn))
                 {
-                    while (reader.Read())
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        Empleado emp = new Empleado
+                        while (reader.Read())
                         {
-                            IdEmpleado = reader.GetInt32("idEmpleado"),
-                            Nombre = reader.GetString("nombre"),
-                            Apellido = reader.IsDBNull(reader.GetOrdinal("apellido"))
-                                ? "" : reader.GetString("apellido"),
-                            Telefono = reader.IsDBNull(reader.GetOrdinal("telefono"))
-                                ? "" : reader.GetString("telefono"),
-                            Direccion = reader.IsDBNull(reader.GetOrdinal("direccion"))
-                                ? "" : reader.GetString("direccion")
-                        };
-                        empleados.Add(emp);
+                            empleados.Add(new Empleado
+                            {
+                                IdEmpleado = reader.GetInt32("idEmpleado"),
+                                Nombre = reader.GetString("nombre"),
+                                Apellido = reader.IsDBNull(reader.GetOrdinal("apellido"))
+                                            ? "" : reader.GetString("apellido"),
+                                Telefono = reader.IsDBNull(reader.GetOrdinal("telefono"))
+                                            ? "" : reader.GetString("telefono"),
+                                Direccion = reader.IsDBNull(reader.GetOrdinal("direccion"))
+                                            ? "" : reader.GetString("direccion")
+                            });
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al listar empleados: {ex.Message}");
+                System.Windows.Forms.MessageBox.Show("Error al listar empleados: " + ex.Message);
             }
             finally
             {
@@ -160,12 +161,9 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
             return empleados;
         }
 
-        /// <summary>
-        /// BUSCA UN EMPLEADO POR ID
-        /// </summary>
-        /// <param name="idEmpleado"></param>
-        /// <returns></returns>
-        /// <exception cref="Exception"></exception>
+        // --------------------------------------------------------
+        // OBTENER POR ID
+        // --------------------------------------------------------
         public Empleado ObtenerPorId(int idEmpleado)
         {
             Empleado empleado = null;
@@ -173,32 +171,36 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
 
             try
             {
-                MySqlConnection conn = conexion.Abrir();
-                string query = "SELECT * FROM empleados WHERE idEmpleado = @id";
-                MySqlCommand cmd = new MySqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@id", idEmpleado);
+                var conn = conexion.Abrir();
 
-                using (MySqlDataReader reader = cmd.ExecuteReader())
+                string query = "SELECT * FROM empleados WHERE idEmpleado = @id";
+
+                using (var cmd = new MySqlCommand(query, conn))
                 {
-                    if (reader.Read())
+                    cmd.Parameters.AddWithValue("@id", idEmpleado);
+
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        empleado = new Empleado
+                        if (reader.Read())
                         {
-                            IdEmpleado = reader.GetInt32("idEmpleado"),
-                            Nombre = reader.GetString("nombre"),
-                            Apellido = reader.IsDBNull(reader.GetOrdinal("apellido"))
-                                ? "" : reader.GetString("apellido"),
-                            Telefono = reader.IsDBNull(reader.GetOrdinal("telefono"))
-                                ? "" : reader.GetString("telefono"),
-                            Direccion = reader.IsDBNull(reader.GetOrdinal("direccion"))
-                                ? "" : reader.GetString("direccion")
-                        };
+                            empleado = new Empleado
+                            {
+                                IdEmpleado = reader.GetInt32("idEmpleado"),
+                                Nombre = reader.GetString("nombre"),
+                                Apellido = reader.IsDBNull(reader.GetOrdinal("apellido"))
+                                            ? "" : reader.GetString("apellido"),
+                                Telefono = reader.IsDBNull(reader.GetOrdinal("telefono"))
+                                            ? "" : reader.GetString("telefono"),
+                                Direccion = reader.IsDBNull(reader.GetOrdinal("direccion"))
+                                            ? "" : reader.GetString("direccion")
+                            };
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                throw new Exception($"Error al obtener empleado: {ex.Message}");
+                System.Windows.Forms.MessageBox.Show("Error al obtener empleado por ID: " + ex.Message);
             }
             finally
             {

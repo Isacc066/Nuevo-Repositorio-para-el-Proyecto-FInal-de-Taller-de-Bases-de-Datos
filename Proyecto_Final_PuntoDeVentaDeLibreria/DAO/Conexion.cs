@@ -1,41 +1,54 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-using MySql.Data.MySqlClient;
 
 namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
 {
     internal class Conexion
     {
         private readonly string cadena = "Server=localhost;Database=VENTAS;Uid=root;Pwd=Tacodeguayaba16;";
+        private MySqlConnection conn;
 
-        public MySqlConnection GetConnection()
+        public MySqlConnection CrearConexion()
         {
             return new MySqlConnection(cadena);
         }
 
-        private MySqlConnection conn;
-
         public Conexion()
         {
             conn = new MySqlConnection("Server=localhost;Database=VENTAS;Uid=root;Pwd=Tacodeguayaba16;");
-
         }
 
         public MySqlConnection Abrir()
         {
-            if (conn.State == System.Data.ConnectionState.Closed)
-                conn.Open();
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                    conn.Open();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo abrir la conexión: " + ex.Message);
+            }
+
             return conn;
         }
 
         public void Cerrar()
         {
-            if (conn.State == System.Data.ConnectionState.Open)
-                conn.Close();
+            try
+            {
+                if (conn.State == ConnectionState.Open)
+                    conn.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No se pudo cerrar la conexión: " + ex.Message);
+            }
         }
     }
 }
