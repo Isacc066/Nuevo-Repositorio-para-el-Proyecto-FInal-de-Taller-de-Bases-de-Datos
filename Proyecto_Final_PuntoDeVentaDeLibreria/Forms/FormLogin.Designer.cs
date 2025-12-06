@@ -40,7 +40,7 @@
             // btnProbarConexion
             // 
             btnProbarConexion.Image = (Image)resources.GetObject("btnProbarConexion.Image");
-            btnProbarConexion.Location = new Point(666, 101);
+            btnProbarConexion.Location = new Point(628, 104);
             btnProbarConexion.Name = "btnProbarConexion";
             btnProbarConexion.Size = new Size(220, 57);
             btnProbarConexion.TabIndex = 0;
