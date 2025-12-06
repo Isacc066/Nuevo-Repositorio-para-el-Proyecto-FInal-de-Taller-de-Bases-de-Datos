@@ -2,15 +2,8 @@
 {
     partial class FormLogin
     {
-        /// <summary>
-        ///  Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        ///  Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,104 +15,120 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            btnProbarConexion = new Button();
-            label1 = new Label();
-            txtUsuario = new TextBox();
-            txtContrasena = new TextBox();
-            btnIngresar = new Button();
-            label2 = new Label();
-            SuspendLayout();
-            // 
-            // btnProbarConexion
-            // 
-            btnProbarConexion.Location = new Point(628, 104);
-            btnProbarConexion.Name = "btnProbarConexion";
-            btnProbarConexion.Size = new Size(220, 57);
-            btnProbarConexion.TabIndex = 0;
-            btnProbarConexion.Text = "Probar Conexion";
-            btnProbarConexion.UseVisualStyleBackColor = true;
-            btnProbarConexion.Click += btnProbarConexion_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = SystemColors.Info;
-            label1.Location = new Point(574, 233);
-            label1.Name = "label1";
-            label1.Size = new Size(62, 20);
-            label1.TabIndex = 1;
-            label1.Text = "Usuario:";
-            label1.Click += label1_Click;
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.Location = new Point(671, 233);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(146, 27);
-            txtUsuario.TabIndex = 2;
-            txtUsuario.TextChanged += txtUsuario_TextChanged;
-            // 
-            // txtContrasena
-            // 
-            txtContrasena.Location = new Point(671, 309);
-            txtContrasena.Name = "txtContrasena";
-            txtContrasena.PasswordChar = '*';
-            txtContrasena.Size = new Size(146, 27);
-            txtContrasena.TabIndex = 3;
-            // 
-            // btnIngresar
-            // 
-            btnIngresar.Location = new Point(620, 431);
-            btnIngresar.Name = "btnIngresar";
-            btnIngresar.Size = new Size(228, 77);
-            btnIngresar.TabIndex = 4;
-            btnIngresar.Text = "Ingresar";
-            btnIngresar.UseVisualStyleBackColor = true;
-            btnIngresar.Click += btnIngresar_Click;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = SystemColors.Info;
-            label2.Location = new Point(568, 309);
-            label2.Name = "label2";
-            label2.Size = new Size(86, 20);
-            label2.TabIndex = 5;
-            label2.Text = "Contraseña:";
+            this.panelCard = new System.Windows.Forms.Panel();
+            this.lblIcon = new System.Windows.Forms.Label();
+            this.labelTitle = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.labelUsuario = new System.Windows.Forms.Label();
+            this.txtPassword = new System.Windows.Forms.TextBox();
+            this.labelPassword = new System.Windows.Forms.Label();
+            this.btnIngresar = new System.Windows.Forms.Button();
+            this.btnProbarConexion = new System.Windows.Forms.Button();
+            this.SuspendLayout();
             // 
             // FormLogin
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.GradientInactiveCaption;
-            ClientSize = new Size(1432, 726);
-            Controls.Add(label2);
-            Controls.Add(btnIngresar);
-            Controls.Add(txtContrasena);
-            Controls.Add(txtUsuario);
-            Controls.Add(label1);
-            Controls.Add(btnProbarConexion);
-            Name = "FormLogin";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Inicio de sesión";
-            Load += FormLogin_Load;
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
+            this.ClientSize = new System.Drawing.Size(600, 500);
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Inicio de Sesión";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+
+            // ===== Panel tipo tarjeta =====
+            this.panelCard.BackColor = System.Drawing.Color.White;
+            this.panelCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelCard.Location = new System.Drawing.Point(130, 60);
+            this.panelCard.Size = new System.Drawing.Size(340, 380);
+            this.panelCard.Padding = new System.Windows.Forms.Padding(20);
+            this.panelCard.Anchor = System.Windows.Forms.AnchorStyles.None;
+
+            // ===== Icono =====
+            this.lblIcon.Text = "👤";
+            this.lblIcon.Font = new System.Drawing.Font("Segoe UI Emoji", 48F, System.Drawing.FontStyle.Regular);
+            this.lblIcon.AutoSize = true;
+            this.lblIcon.Location = new System.Drawing.Point(120, 10);
+
+            // ===== Título =====
+            this.labelTitle.Text = "Inicio de Sesión";
+            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
+            this.labelTitle.AutoSize = true;
+            this.labelTitle.Location = new System.Drawing.Point(75, 95);
+
+            // ===== Usuario =====
+            this.labelUsuario.Text = "Usuario";
+            this.labelUsuario.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelUsuario.AutoSize = true;
+            this.labelUsuario.Location = new System.Drawing.Point(30, 150);
+
+            this.txtUsuario.Location = new System.Drawing.Point(30, 175);
+            this.txtUsuario.Size = new System.Drawing.Size(280, 27);
+            this.txtUsuario.TabIndex = 0;
+            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
+
+            // ===== Contraseña =====
+            this.labelPassword.Text = "Contraseña";
+            this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.labelPassword.AutoSize = true;
+            this.labelPassword.Location = new System.Drawing.Point(30, 215);
+
+            this.txtPassword.Location = new System.Drawing.Point(30, 240);
+            this.txtPassword.Size = new System.Drawing.Size(280, 27);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.PasswordChar = '*';
+
+            // ===== Botón Ingresar =====
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(46, 139, 87);
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
+            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnIngresar.FlatAppearance.BorderSize = 0;
+            this.btnIngresar.Location = new System.Drawing.Point(30, 295);
+            this.btnIngresar.Size = new System.Drawing.Size(280, 40);
+            this.btnIngresar.TabIndex = 2;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
+
+            // ===== Botón Probar Conexión =====
+            this.btnProbarConexion.Text = "Probar Conexión";
+            this.btnProbarConexion.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnProbarConexion.BackColor = System.Drawing.Color.LightGray;
+            this.btnProbarConexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProbarConexion.Location = new System.Drawing.Point(95, 345);
+            this.btnProbarConexion.Size = new System.Drawing.Size(150, 30);
+            this.btnProbarConexion.TabIndex = 3;
+            this.btnProbarConexion.Click += new System.EventHandler(this.btnProbarConexion_Click);
+
+            // ===== Agregar controles a la tarjeta =====
+            this.panelCard.Controls.Add(this.lblIcon);
+            this.panelCard.Controls.Add(this.labelTitle);
+            this.panelCard.Controls.Add(this.labelUsuario);
+            this.panelCard.Controls.Add(this.txtUsuario);
+            this.panelCard.Controls.Add(this.labelPassword);
+            this.panelCard.Controls.Add(this.txtPassword);
+            this.panelCard.Controls.Add(this.btnIngresar);
+            this.panelCard.Controls.Add(this.btnProbarConexion);
+
+            // ===== Agregar panel al Form =====
+            this.Controls.Add(this.panelCard);
+
+            this.ResumeLayout(false);
         }
 
         #endregion
 
-        private Button btnProbarConexion;
-        private Label label1;
-        private TextBox txtUsuario;
-        private TextBox txtContrasena;
-        private Button btnIngresar;
-        private Label label2;
+        private System.Windows.Forms.Panel panelCard;
+        private System.Windows.Forms.Label lblIcon;
+        private System.Windows.Forms.Label labelTitle;
+        private System.Windows.Forms.Label labelUsuario;
+        private System.Windows.Forms.Label labelPassword;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.Button btnProbarConexion;
     }
 }
