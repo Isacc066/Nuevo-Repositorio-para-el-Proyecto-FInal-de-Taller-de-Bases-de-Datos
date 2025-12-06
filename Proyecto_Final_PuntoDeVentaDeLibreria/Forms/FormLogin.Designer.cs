@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             btnProbarConexion = new Button();
             label1 = new Label();
             txtUsuario = new TextBox();
@@ -39,7 +38,6 @@
             // 
             // btnProbarConexion
             // 
-            btnProbarConexion.Image = (Image)resources.GetObject("btnProbarConexion.Image");
             btnProbarConexion.Location = new Point(628, 104);
             btnProbarConexion.Name = "btnProbarConexion";
             btnProbarConexion.Size = new Size(220, 57);
