@@ -50,7 +50,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
                 DAOUsuarios dao = new DAOUsuarios();
 
                 string usuario = txtUsuario.Text.Trim();
-                string contrasena = txtContrasena.Text.Trim();
+                string contrasena = txtPassword.Text.Trim();
 
                 if (string.IsNullOrWhiteSpace(usuario) || string.IsNullOrWhiteSpace(contrasena))
                 {
@@ -86,5 +86,7 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria
                 MessageBox.Show("Ocurrió un error en el Login: " + ex.Message);
             }
         }
+
+
     }
 }

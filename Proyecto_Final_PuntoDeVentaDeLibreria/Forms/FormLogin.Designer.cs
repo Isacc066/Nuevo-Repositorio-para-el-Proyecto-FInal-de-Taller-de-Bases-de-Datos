@@ -17,106 +17,135 @@
 
         private void InitializeComponent()
         {
-            this.panelCard = new System.Windows.Forms.Panel();
-            this.lblIcon = new System.Windows.Forms.Label();
-            this.labelTitle = new System.Windows.Forms.Label();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.labelUsuario = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.labelPassword = new System.Windows.Forms.Label();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.btnProbarConexion = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            panelCard = new Panel();
+            lblIcon = new Label();
+            labelTitle = new Label();
+            labelUsuario = new Label();
+            txtUsuario = new TextBox();
+            labelPassword = new Label();
+            txtPassword = new TextBox();
+            btnIngresar = new Button();
+            btnProbarConexion = new Button();
+            panelCard.SuspendLayout();
+            SuspendLayout();
+            // 
+            // panelCard
+            // 
+            panelCard.Anchor = AnchorStyles.None;
+            panelCard.BackColor = Color.White;
+            panelCard.BorderStyle = BorderStyle.FixedSingle;
+            panelCard.Controls.Add(lblIcon);
+            panelCard.Controls.Add(labelTitle);
+            panelCard.Controls.Add(labelUsuario);
+            panelCard.Controls.Add(txtUsuario);
+            panelCard.Controls.Add(labelPassword);
+            panelCard.Controls.Add(txtPassword);
+            panelCard.Controls.Add(btnIngresar);
+            panelCard.Controls.Add(btnProbarConexion);
+            panelCard.Location = new Point(130, 60);
+            panelCard.Name = "panelCard";
+            panelCard.Padding = new Padding(20);
+            panelCard.Size = new Size(340, 401);
+            panelCard.TabIndex = 0;
+            // 
+            // lblIcon
+            // 
+            lblIcon.AutoSize = true;
+            lblIcon.Location = new Point(0, 0);
+            lblIcon.Name = "lblIcon";
+            lblIcon.Size = new Size(30, 20);
+            lblIcon.TabIndex = 0;
+            lblIcon.Text = "👤";
+            // 
+            // labelTitle
+            // 
+            labelTitle.AutoSize = true;
+            labelTitle.Font = new Font("Segoe UI", 20F, FontStyle.Bold);
+            labelTitle.Location = new Point(30, 86);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(270, 46);
+            labelTitle.TabIndex = 1;
+            labelTitle.Text = "Inicio de Sesión";
+            // 
+            // labelUsuario
+            // 
+            labelUsuario.AutoSize = true;
+            labelUsuario.Font = new Font("Segoe UI", 10F);
+            labelUsuario.Location = new Point(30, 150);
+            labelUsuario.Name = "labelUsuario";
+            labelUsuario.Size = new Size(68, 23);
+            labelUsuario.TabIndex = 2;
+            labelUsuario.Text = "Usuario";
+            // 
+            // txtUsuario
+            // 
+            txtUsuario.Location = new Point(30, 175);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(280, 27);
+            txtUsuario.TabIndex = 0;
+            txtUsuario.TextChanged += txtUsuario_TextChanged;
+            // 
+            // labelPassword
+            // 
+            labelPassword.AutoSize = true;
+            labelPassword.Font = new Font("Segoe UI", 10F);
+            labelPassword.Location = new Point(30, 215);
+            labelPassword.Name = "labelPassword";
+            labelPassword.Size = new Size(97, 23);
+            labelPassword.TabIndex = 3;
+            labelPassword.Text = "Contraseña";
+            // 
+            // txtPassword
+            // 
+            txtPassword.Location = new Point(30, 240);
+            txtPassword.Name = "txtPassword";
+            txtPassword.PasswordChar = '*';
+            txtPassword.Size = new Size(280, 27);
+            txtPassword.TabIndex = 1;
+            // 
+            // btnIngresar
+            // 
+            btnIngresar.BackColor = Color.FromArgb(46, 139, 87);
+            btnIngresar.FlatAppearance.BorderSize = 0;
+            btnIngresar.FlatStyle = FlatStyle.Flat;
+            btnIngresar.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnIngresar.ForeColor = Color.White;
+            btnIngresar.Location = new Point(30, 295);
+            btnIngresar.Name = "btnIngresar";
+            btnIngresar.Size = new Size(280, 40);
+            btnIngresar.TabIndex = 2;
+            btnIngresar.Text = "Ingresar";
+            btnIngresar.UseVisualStyleBackColor = false;
+            btnIngresar.Click += btnIngresar_Click;
+            // 
+            // btnProbarConexion
+            // 
+            btnProbarConexion.BackColor = Color.LightGray;
+            btnProbarConexion.FlatStyle = FlatStyle.Flat;
+            btnProbarConexion.Font = new Font("Segoe UI", 9F);
+            btnProbarConexion.Location = new Point(95, 345);
+            btnProbarConexion.Name = "btnProbarConexion";
+            btnProbarConexion.Size = new Size(150, 30);
+            btnProbarConexion.TabIndex = 3;
+            btnProbarConexion.Text = "Probar Conexión";
+            btnProbarConexion.UseVisualStyleBackColor = false;
+            btnProbarConexion.Click += btnProbarConexion_Click;
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(240, 240, 240);
-            this.ClientSize = new System.Drawing.Size(600, 500);
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Inicio de Sesión";
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.MaximizeBox = false;
-
-            // ===== Panel tipo tarjeta =====
-            this.panelCard.BackColor = System.Drawing.Color.White;
-            this.panelCard.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panelCard.Location = new System.Drawing.Point(130, 60);
-            this.panelCard.Size = new System.Drawing.Size(340, 380);
-            this.panelCard.Padding = new System.Windows.Forms.Padding(20);
-            this.panelCard.Anchor = System.Windows.Forms.AnchorStyles.None;
-
-            // ===== Icono =====
-            this.lblIcon.Text = "👤";
-            this.lblIcon.Font = new System.Drawing.Font("Segoe UI Emoji", 48F, System.Drawing.FontStyle.Regular);
-            this.lblIcon.AutoSize = true;
-            this.lblIcon.Location = new System.Drawing.Point(120, 10);
-
-            // ===== Título =====
-            this.labelTitle.Text = "Inicio de Sesión";
-            this.labelTitle.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Bold);
-            this.labelTitle.AutoSize = true;
-            this.labelTitle.Location = new System.Drawing.Point(75, 95);
-
-            // ===== Usuario =====
-            this.labelUsuario.Text = "Usuario";
-            this.labelUsuario.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelUsuario.AutoSize = true;
-            this.labelUsuario.Location = new System.Drawing.Point(30, 150);
-
-            this.txtUsuario.Location = new System.Drawing.Point(30, 175);
-            this.txtUsuario.Size = new System.Drawing.Size(280, 27);
-            this.txtUsuario.TabIndex = 0;
-            this.txtUsuario.TextChanged += new System.EventHandler(this.txtUsuario_TextChanged);
-
-            // ===== Contraseña =====
-            this.labelPassword.Text = "Contraseña";
-            this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.labelPassword.AutoSize = true;
-            this.labelPassword.Location = new System.Drawing.Point(30, 215);
-
-            this.txtPassword.Location = new System.Drawing.Point(30, 240);
-            this.txtPassword.Size = new System.Drawing.Size(280, 27);
-            this.txtPassword.TabIndex = 1;
-            this.txtPassword.PasswordChar = '*';
-
-            // ===== Botón Ingresar =====
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Bold);
-            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(46, 139, 87);
-            this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnIngresar.FlatAppearance.BorderSize = 0;
-            this.btnIngresar.Location = new System.Drawing.Point(30, 295);
-            this.btnIngresar.Size = new System.Drawing.Size(280, 40);
-            this.btnIngresar.TabIndex = 2;
-            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
-
-            // ===== Botón Probar Conexión =====
-            this.btnProbarConexion.Text = "Probar Conexión";
-            this.btnProbarConexion.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnProbarConexion.BackColor = System.Drawing.Color.LightGray;
-            this.btnProbarConexion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProbarConexion.Location = new System.Drawing.Point(95, 345);
-            this.btnProbarConexion.Size = new System.Drawing.Size(150, 30);
-            this.btnProbarConexion.TabIndex = 3;
-            this.btnProbarConexion.Click += new System.EventHandler(this.btnProbarConexion_Click);
-
-            // ===== Agregar controles a la tarjeta =====
-            this.panelCard.Controls.Add(this.lblIcon);
-            this.panelCard.Controls.Add(this.labelTitle);
-            this.panelCard.Controls.Add(this.labelUsuario);
-            this.panelCard.Controls.Add(this.txtUsuario);
-            this.panelCard.Controls.Add(this.labelPassword);
-            this.panelCard.Controls.Add(this.txtPassword);
-            this.panelCard.Controls.Add(this.btnIngresar);
-            this.panelCard.Controls.Add(this.btnProbarConexion);
-
-            // ===== Agregar panel al Form =====
-            this.Controls.Add(this.panelCard);
-
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(240, 240, 240);
+            ClientSize = new Size(600, 500);
+            Controls.Add(panelCard);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "FormLogin";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Inicio de Sesión";
+            panelCard.ResumeLayout(false);
+            panelCard.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion

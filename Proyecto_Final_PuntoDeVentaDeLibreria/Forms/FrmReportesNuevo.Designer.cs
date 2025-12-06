@@ -28,276 +28,284 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lblEstadoProductos = new System.Windows.Forms.Label();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.btnGenerarReporteProductos = new System.Windows.Forms.Button();
-            this.dtpFinProductos = new System.Windows.Forms.DateTimePicker();
-            this.dtpInicioProductos = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.lblEstadoEmpleados = new System.Windows.Forms.Label();
-            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
-            this.btnGenerarReporteEmpleados = new System.Windows.Forms.Button();
-            this.dtpFinEmpleados = new System.Windows.Forms.DateTimePicker();
-            this.dtpInicioEmpleados = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
-            this.SuspendLayout();
+            tabControl1 = new TabControl();
+            tabPage1 = new TabPage();
+            lblEstadoProductos = new Label();
+            dgvProductos = new DataGridView();
+            btnGenerarReporteProductos = new Button();
+            dtpFinProductos = new DateTimePicker();
+            dtpInicioProductos = new DateTimePicker();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
+            tabPage2 = new TabPage();
+            lblEstadoEmpleados = new Label();
+            dgvEmpleados = new DataGridView();
+            btnGenerarReporteEmpleados = new Button();
+            dtpFinEmpleados = new DateTimePicker();
+            dtpInicioEmpleados = new DateTimePicker();
+            label6 = new Label();
+            label5 = new Label();
+            label4 = new Label();
+            tabControl1.SuspendLayout();
+            tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).BeginInit();
+            tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).BeginInit();
+            SuspendLayout();
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1100, 650);
-            this.tabControl1.TabIndex = 0;
+            tabControl1.Controls.Add(tabPage1);
+            tabControl1.Controls.Add(tabPage2);
+            tabControl1.Dock = DockStyle.Fill;
+            tabControl1.Font = new Font("Segoe UI", 10F);
+            tabControl1.Location = new Point(0, 0);
+            tabControl1.Margin = new Padding(3, 4, 3, 4);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1257, 867);
+            tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.White;
-            this.tabPage1.Controls.Add(this.lblEstadoProductos);
-            this.tabPage1.Controls.Add(this.dgvProductos);
-            this.tabPage1.Controls.Add(this.btnGenerarReporteProductos);
-            this.tabPage1.Controls.Add(this.dtpFinProductos);
-            this.tabPage1.Controls.Add(this.dtpInicioProductos);
-            this.tabPage1.Controls.Add(this.label3);
-            this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 28);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1092, 618);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "📊 Reporte de Productos";
+            tabPage1.BackColor = Color.White;
+            tabPage1.Controls.Add(lblEstadoProductos);
+            tabPage1.Controls.Add(dgvProductos);
+            tabPage1.Controls.Add(btnGenerarReporteProductos);
+            tabPage1.Controls.Add(dtpFinProductos);
+            tabPage1.Controls.Add(dtpInicioProductos);
+            tabPage1.Controls.Add(label3);
+            tabPage1.Controls.Add(label2);
+            tabPage1.Controls.Add(label1);
+            tabPage1.Location = new Point(4, 32);
+            tabPage1.Margin = new Padding(3, 4, 3, 4);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Padding = new Padding(3, 4, 3, 4);
+            tabPage1.Size = new Size(1249, 831);
+            tabPage1.TabIndex = 0;
+            tabPage1.Text = "📊 Reporte de Productos";
             // 
             // lblEstadoProductos
             // 
-            this.lblEstadoProductos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEstadoProductos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEstadoProductos.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lblEstadoProductos.Location = new System.Drawing.Point(20, 575);
-            this.lblEstadoProductos.Name = "lblEstadoProductos";
-            this.lblEstadoProductos.Size = new System.Drawing.Size(1050, 25);
-            this.lblEstadoProductos.TabIndex = 7;
-            this.lblEstadoProductos.Text = "Seleccione un rango de fechas y genere el reporte";
-            this.lblEstadoProductos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblEstadoProductos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblEstadoProductos.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblEstadoProductos.ForeColor = Color.FromArgb(52, 73, 94);
+            lblEstadoProductos.Location = new Point(23, 767);
+            lblEstadoProductos.Name = "lblEstadoProductos";
+            lblEstadoProductos.Size = new Size(1200, 33);
+            lblEstadoProductos.TabIndex = 7;
+            lblEstadoProductos.Text = "Seleccione un rango de fechas y genere el reporte";
+            lblEstadoProductos.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // dgvProductos
             // 
-            this.dgvProductos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvProductos.BackgroundColor = System.Drawing.Color.White;
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Location = new System.Drawing.Point(20, 105);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.RowTemplate.Height = 25;
-            this.dgvProductos.Size = new System.Drawing.Size(1050, 460);
-            this.dgvProductos.TabIndex = 6;
+            dgvProductos.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvProductos.BackgroundColor = Color.White;
+            dgvProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProductos.Location = new Point(23, 140);
+            dgvProductos.Margin = new Padding(3, 4, 3, 4);
+            dgvProductos.Name = "dgvProductos";
+            dgvProductos.RowHeadersWidth = 51;
+            dgvProductos.RowTemplate.Height = 25;
+            dgvProductos.Size = new Size(828, 613);
+            dgvProductos.TabIndex = 6;
             // 
             // btnGenerarReporteProductos
             // 
-            this.btnGenerarReporteProductos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnGenerarReporteProductos.FlatAppearance.BorderSize = 0;
-            this.btnGenerarReporteProductos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarReporteProductos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGenerarReporteProductos.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporteProductos.Location = new System.Drawing.Point(595, 57);
-            this.btnGenerarReporteProductos.Name = "btnGenerarReporteProductos";
-            this.btnGenerarReporteProductos.Size = new System.Drawing.Size(160, 35);
-            this.btnGenerarReporteProductos.TabIndex = 5;
-            this.btnGenerarReporteProductos.Text = "📊 Generar reporte";
-            this.btnGenerarReporteProductos.UseVisualStyleBackColor = false;
+            btnGenerarReporteProductos.BackColor = Color.FromArgb(46, 204, 113);
+            btnGenerarReporteProductos.FlatAppearance.BorderSize = 0;
+            btnGenerarReporteProductos.FlatStyle = FlatStyle.Flat;
+            btnGenerarReporteProductos.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnGenerarReporteProductos.ForeColor = Color.White;
+            btnGenerarReporteProductos.Location = new Point(680, 76);
+            btnGenerarReporteProductos.Margin = new Padding(3, 4, 3, 4);
+            btnGenerarReporteProductos.Name = "btnGenerarReporteProductos";
+            btnGenerarReporteProductos.Size = new Size(183, 47);
+            btnGenerarReporteProductos.TabIndex = 5;
+            btnGenerarReporteProductos.Text = "📊 Generar reporte";
+            btnGenerarReporteProductos.UseVisualStyleBackColor = false;
             // 
             // dtpFinProductos
             // 
-            this.dtpFinProductos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpFinProductos.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFinProductos.Location = new System.Drawing.Point(425, 62);
-            this.dtpFinProductos.Name = "dtpFinProductos";
-            this.dtpFinProductos.Size = new System.Drawing.Size(150, 25);
-            this.dtpFinProductos.TabIndex = 4;
+            dtpFinProductos.Font = new Font("Segoe UI", 10F);
+            dtpFinProductos.Format = DateTimePickerFormat.Short;
+            dtpFinProductos.Location = new Point(486, 83);
+            dtpFinProductos.Margin = new Padding(3, 4, 3, 4);
+            dtpFinProductos.Name = "dtpFinProductos";
+            dtpFinProductos.Size = new Size(171, 30);
+            dtpFinProductos.TabIndex = 4;
             // 
             // dtpInicioProductos
             // 
-            this.dtpInicioProductos.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpInicioProductos.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInicioProductos.Location = new System.Drawing.Point(145, 62);
-            this.dtpInicioProductos.Name = "dtpInicioProductos";
-            this.dtpInicioProductos.Size = new System.Drawing.Size(150, 25);
-            this.dtpInicioProductos.TabIndex = 3;
+            dtpInicioProductos.Font = new Font("Segoe UI", 10F);
+            dtpInicioProductos.Format = DateTimePickerFormat.Short;
+            dtpInicioProductos.Location = new Point(166, 83);
+            dtpInicioProductos.Margin = new Padding(3, 4, 3, 4);
+            dtpInicioProductos.Name = "dtpInicioProductos";
+            dtpInicioProductos.Size = new Size(171, 30);
+            dtpInicioProductos.TabIndex = 3;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label3.Location = new System.Drawing.Point(320, 65);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 19);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Fecha de fin:";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label3.Location = new Point(366, 87);
+            label3.Name = "label3";
+            label3.Size = new Size(112, 23);
+            label3.TabIndex = 2;
+            label3.Text = "Fecha de fin:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(20, 65);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 19);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Fecha de inicio:";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label2.Location = new Point(23, 87);
+            label2.Name = "label2";
+            label2.Size = new Size(133, 23);
+            label2.TabIndex = 1;
+            label2.Text = "Fecha de inicio:";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
-            this.label1.Location = new System.Drawing.Point(20, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(388, 30);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Reporte de Ventas de Productos";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label1.ForeColor = Color.FromArgb(41, 128, 185);
+            label1.Location = new Point(23, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(429, 37);
+            label1.TabIndex = 0;
+            label1.Text = "Reporte de Ventas de Productos";
             // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.lblEstadoEmpleados);
-            this.tabPage2.Controls.Add(this.dgvEmpleados);
-            this.tabPage2.Controls.Add(this.btnGenerarReporteEmpleados);
-            this.tabPage2.Controls.Add(this.dtpFinEmpleados);
-            this.tabPage2.Controls.Add(this.dtpInicioEmpleados);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label5);
-            this.tabPage2.Controls.Add(this.label4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 28);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1092, 618);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "👥 Reporte por Usuario";
+            tabPage2.BackColor = Color.White;
+            tabPage2.Controls.Add(lblEstadoEmpleados);
+            tabPage2.Controls.Add(dgvEmpleados);
+            tabPage2.Controls.Add(btnGenerarReporteEmpleados);
+            tabPage2.Controls.Add(dtpFinEmpleados);
+            tabPage2.Controls.Add(dtpInicioEmpleados);
+            tabPage2.Controls.Add(label6);
+            tabPage2.Controls.Add(label5);
+            tabPage2.Controls.Add(label4);
+            tabPage2.Location = new Point(4, 32);
+            tabPage2.Margin = new Padding(3, 4, 3, 4);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3, 4, 3, 4);
+            tabPage2.Size = new Size(1249, 831);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "👥 Reporte por Usuario";
             // 
             // lblEstadoEmpleados
             // 
-            this.lblEstadoEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblEstadoEmpleados.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.lblEstadoEmpleados.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
-            this.lblEstadoEmpleados.Location = new System.Drawing.Point(20, 575);
-            this.lblEstadoEmpleados.Name = "lblEstadoEmpleados";
-            this.lblEstadoEmpleados.Size = new System.Drawing.Size(1050, 25);
-            this.lblEstadoEmpleados.TabIndex = 7;
-            this.lblEstadoEmpleados.Text = "Seleccione un rango de fechas y genere el reporte";
-            this.lblEstadoEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            lblEstadoEmpleados.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            lblEstadoEmpleados.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblEstadoEmpleados.ForeColor = Color.FromArgb(52, 73, 94);
+            lblEstadoEmpleados.Location = new Point(23, 767);
+            lblEstadoEmpleados.Name = "lblEstadoEmpleados";
+            lblEstadoEmpleados.Size = new Size(1200, 33);
+            lblEstadoEmpleados.TabIndex = 7;
+            lblEstadoEmpleados.Text = "Seleccione un rango de fechas y genere el reporte";
+            lblEstadoEmpleados.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // dgvEmpleados
             // 
-            this.dgvEmpleados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dgvEmpleados.BackgroundColor = System.Drawing.Color.White;
-            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(20, 105);
-            this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.RowTemplate.Height = 25;
-            this.dgvEmpleados.Size = new System.Drawing.Size(1050, 460);
-            this.dgvEmpleados.TabIndex = 6;
+            dgvEmpleados.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvEmpleados.BackgroundColor = Color.White;
+            dgvEmpleados.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEmpleados.Location = new Point(23, 140);
+            dgvEmpleados.Margin = new Padding(3, 4, 3, 4);
+            dgvEmpleados.Name = "dgvEmpleados";
+            dgvEmpleados.RowHeadersWidth = 51;
+            dgvEmpleados.RowTemplate.Height = 25;
+            dgvEmpleados.Size = new Size(615, 613);
+            dgvEmpleados.TabIndex = 6;
             // 
             // btnGenerarReporteEmpleados
             // 
-            this.btnGenerarReporteEmpleados.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(89)))), ((int)(((byte)(182)))));
-            this.btnGenerarReporteEmpleados.FlatAppearance.BorderSize = 0;
-            this.btnGenerarReporteEmpleados.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerarReporteEmpleados.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnGenerarReporteEmpleados.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporteEmpleados.Location = new System.Drawing.Point(595, 57);
-            this.btnGenerarReporteEmpleados.Name = "btnGenerarReporteEmpleados";
-            this.btnGenerarReporteEmpleados.Size = new System.Drawing.Size(160, 35);
-            this.btnGenerarReporteEmpleados.TabIndex = 5;
-            this.btnGenerarReporteEmpleados.Text = "📊 Generar reporte";
-            this.btnGenerarReporteEmpleados.UseVisualStyleBackColor = false;
+            btnGenerarReporteEmpleados.BackColor = Color.FromArgb(155, 89, 182);
+            btnGenerarReporteEmpleados.FlatAppearance.BorderSize = 0;
+            btnGenerarReporteEmpleados.FlatStyle = FlatStyle.Flat;
+            btnGenerarReporteEmpleados.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnGenerarReporteEmpleados.ForeColor = Color.White;
+            btnGenerarReporteEmpleados.Location = new Point(680, 76);
+            btnGenerarReporteEmpleados.Margin = new Padding(3, 4, 3, 4);
+            btnGenerarReporteEmpleados.Name = "btnGenerarReporteEmpleados";
+            btnGenerarReporteEmpleados.Size = new Size(183, 47);
+            btnGenerarReporteEmpleados.TabIndex = 5;
+            btnGenerarReporteEmpleados.Text = "📊 Generar reporte";
+            btnGenerarReporteEmpleados.UseVisualStyleBackColor = false;
             // 
             // dtpFinEmpleados
             // 
-            this.dtpFinEmpleados.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpFinEmpleados.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFinEmpleados.Location = new System.Drawing.Point(425, 62);
-            this.dtpFinEmpleados.Name = "dtpFinEmpleados";
-            this.dtpFinEmpleados.Size = new System.Drawing.Size(150, 25);
-            this.dtpFinEmpleados.TabIndex = 4;
+            dtpFinEmpleados.Font = new Font("Segoe UI", 10F);
+            dtpFinEmpleados.Format = DateTimePickerFormat.Short;
+            dtpFinEmpleados.Location = new Point(486, 83);
+            dtpFinEmpleados.Margin = new Padding(3, 4, 3, 4);
+            dtpFinEmpleados.Name = "dtpFinEmpleados";
+            dtpFinEmpleados.Size = new Size(171, 30);
+            dtpFinEmpleados.TabIndex = 4;
             // 
             // dtpInicioEmpleados
             // 
-            this.dtpInicioEmpleados.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.dtpInicioEmpleados.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpInicioEmpleados.Location = new System.Drawing.Point(145, 62);
-            this.dtpInicioEmpleados.Name = "dtpInicioEmpleados";
-            this.dtpInicioEmpleados.Size = new System.Drawing.Size(150, 25);
-            this.dtpInicioEmpleados.TabIndex = 3;
+            dtpInicioEmpleados.Font = new Font("Segoe UI", 10F);
+            dtpInicioEmpleados.Format = DateTimePickerFormat.Short;
+            dtpInicioEmpleados.Location = new Point(166, 83);
+            dtpInicioEmpleados.Margin = new Padding(3, 4, 3, 4);
+            dtpInicioEmpleados.Name = "dtpInicioEmpleados";
+            dtpInicioEmpleados.Size = new Size(171, 30);
+            dtpInicioEmpleados.TabIndex = 3;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label6.Location = new System.Drawing.Point(320, 65);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(97, 19);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Fecha de fin:";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label6.Location = new Point(366, 87);
+            label6.Name = "label6";
+            label6.Size = new Size(112, 23);
+            label6.TabIndex = 2;
+            label6.Text = "Fecha de fin:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(20, 65);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(115, 19);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Fecha de inicio:";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            label5.Location = new Point(23, 87);
+            label5.Name = "label5";
+            label5.Size = new Size(133, 23);
+            label5.TabIndex = 1;
+            label5.Text = "Fecha de inicio:";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(142)))), ((int)(((byte)(68)))), ((int)(((byte)(173)))));
-            this.label4.Location = new System.Drawing.Point(20, 15);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(325, 30);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Reporte de Ventas por Usuario";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            label4.ForeColor = Color.FromArgb(142, 68, 173);
+            label4.Location = new Point(23, 20);
+            label4.Name = "label4";
+            label4.Size = new Size(410, 37);
+            label4.TabIndex = 0;
+            label4.Text = "Reporte de Ventas por Usuario";
             // 
-            // FrmReportes
+            // FrmReportesNuevo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1100, 650);
-            this.Controls.Add(this.tabControl1);
-            this.MinimumSize = new System.Drawing.Size(1116, 689);
-            this.Name = "FrmReportes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Reportes de Ventas";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1257, 867);
+            Controls.Add(tabControl1);
+            Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1273, 903);
+            Name = "FrmReportesNuevo";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Reportes de Ventas";
+            tabControl1.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProductos).EndInit();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvEmpleados).EndInit();
+            ResumeLayout(false);
 
         }
 
