@@ -244,5 +244,113 @@ namespace Proyecto_Final_PuntoDeVentaDeLibreria.DAO
             }
             return lista;
         }
+
+        // AGREGA ESTOS MÉTODOS AL FINAL DE TU CLASE ReporteDAO
+
+        /// <summary>
+        /// Obtiene reporte de productos vendidos por rango de fechas
+        /// Ordenado alfabéticamente por nombre del producto
+        /// </summary>
+        public List<ReporteProductoVendido> ObtenerReporteProductosVendidos(DateTime fechaInicio, DateTime fechaFin)
+        {
+            var lista = new List<ReporteProductoVendido>();
+            try
+            {
+                var conn = conexion.Abrir();
+                string query = @"
+            SELECT 
+                p.isbn AS ISBN,
+                p.nombre AS Nombre,
+                p.descripcion AS Descripcion,
+                p.precio AS Costo,
+                SUM(dv.cantidad) AS UnidadesVendidas
+            FROM detalle_ventas dv
+            JOIN productos p ON p.idProducto = dv.idProducto
+            JOIN ventas v ON v.idVenta = dv.idVenta
+            WHERE DATE(v.fecha) BETWEEN @fechaInicio AND @fechaFin
+            GROUP BY p.idProducto, p.isbn, p.nombre, p.descripcion, p.precio
+            ORDER BY p.nombre ASC";
+
+                using var cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@fechaInicio", fechaInicio.Date);
+                cmd.Parameters.AddWithValue("@fechaFin", fechaFin.Date);
+
+                using var reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var reporte = new ReporteProductoVendido
+                    {
+                        ISBN = reader.GetString("ISBN"),
+                        Nombre = reader.GetString("Nombre"),
+                        Descripcion = reader.IsDBNull(reader.GetOrdinal("Descripcion"))
+                            ? "" : reader.GetString("Descripcion"),
+                        Costo = reader.GetDecimal("Costo"),
+                        UnidadesVendidas = reader.GetInt32("UnidadesVendidas")
+                    };
+                    lista.Add(reporte);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al obtener reporte de productos: {ex.Message}");
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+            return lista;
+        }
+
+        /// <summary>
+        /// Obtiene reporte de ventas por empleado/usuario
+        /// Ordenado de mayor a menor por monto vendido
+        /// </summary>
+        public List<ReporteVentasPorEmpleado> ObtenerReporteVentasPorEmpleado(DateTime fechaInicio, DateTime fechaFin)
+        {
+            var lista = new List<ReporteVentasPorEmpleado>();
+            try
+            {
+                var conn = conexion.Abrir();
+                string query = @"
+            SELECT 
+                u.idUsuario AS Clave,
+                u.usuario AS Nombre,
+                SUM(v.total) AS MontoVendido,
+                COUNT(v.idVenta) AS NumeroVentas
+            FROM ventas v
+            JOIN usuarios u ON u.idUsuario = v.idUsuario
+            WHERE DATE(v.fecha) BETWEEN @fechaInicio AND @fechaFin
+            GROUP BY u.idUsuario, u.usuario
+            ORDER BY MontoVendido DESC";
+
+                using var cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@fechaInicio", fechaInicio.Date);
+                cmd.Parameters.AddWithValue("@fechaFin", fechaFin.Date);
+
+                using var reader = cmd.ExecuteReader();
+
+                while (reader.Read())
+                {
+                    var reporte = new ReporteVentasPorEmpleado
+                    {
+                        Clave = reader.GetInt32("Clave"),
+                        Nombre = reader.GetString("Nombre"),
+                        MontoVendido = reader.GetDecimal("MontoVendido"),
+                        NumeroVentas = reader.GetInt32("NumeroVentas")
+                    };
+                    lista.Add(reporte);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Error al obtener reporte de empleados: {ex.Message}");
+            }
+            finally
+            {
+                conexion.Cerrar();
+            }
+            return lista;
+        }
     }
 }
